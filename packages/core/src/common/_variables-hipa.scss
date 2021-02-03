@@ -23,44 +23,48 @@ $hipa-font-size-primary: $hipa-font-size3;
 $hipa-font-size-small: $hipa-font-size2;
 $hipa-font-size-big: $hipa-font-size4;
 
-$hipa-button-text-none: $hipa-gray200;
-$hipa-button-text-disabled-none: $hipa-gray700;
-$hipa-button-border-none: $hipa-gray700;
-$hipa-button-border-hover-none: $hipa-gray600;
-$hipa-button-border-active-none: $hipa-gray600;
-$hipa-button-border-disabled-none: $hipa-gray800;
+$hipa-primary-color: $hipa-blue-dark-300;
+$hipa-primary-light-color: $hipa-blue-100;
+$hipa-primary-disabled: $hipa-blue-300;
 
-$hipa-button-bg-primary: $hipa-blue300;
-$hipa-button-bg-hover-primary: $hipa-blue200;
-$hipa-button-bg-hover-minimal-primary: $hipa-blue500;
-$hipa-button-bg-active-primary: $hipa-blue100;
-$hipa-button-bg-active-minimal-primary: $hipa-blue400;
-$hipa-button-bg-disabled-primary: $hipa-blue400;
+$hipa-button-text-none: $hipa-gray-dark-200;
+$hipa-button-text-disabled-none: $hipa-gray-200;
+$hipa-button-border-none: $hipa-gray-200;
+$hipa-button-border-hover-none: $hipa-gray-100;
+$hipa-button-border-active-none: $hipa-gray-100;
+$hipa-button-border-disabled-none: $hipa-gray-300;
 
-$hipa-button-bg-success: $hipa-green300;
-$hipa-button-bg-hover-success: $hipa-green200;
-$hipa-button-bg-hover-minimal-success: $hipa-green500;
-$hipa-button-bg-active-success: $hipa-green100;
-$hipa-button-bg-active-minimal-success: $hipa-green400;
-$hipa-button-bg-disabled-success: $hipa-green400;
+$hipa-button-bg-primary: $hipa-blue-dark-300;
+$hipa-button-bg-hover-primary: $hipa-blue-dark-200;
+$hipa-button-bg-hover-minimal-primary: $hipa-blue-200;
+$hipa-button-bg-active-primary: $hipa-blue-dark-100;
+$hipa-button-bg-active-minimal-primary: $hipa-blue-100;
+$hipa-button-bg-disabled-primary: $hipa-blue-100;
 
-$hipa-button-bg-warning: $hipa-orange300;
-$hipa-button-bg-hover-warning: $hipa-orange200;
-$hipa-button-bg-hover-minimal-warning: $hipa-orange500;
-$hipa-button-bg-active-warning: $hipa-orange100;
-$hipa-button-bg-active-minimal-warning: $hipa-orange400;
-$hipa-button-bg-disabled-warning: $hipa-orange400;
+$hipa-button-bg-success: $hipa-green-300;
+$hipa-button-bg-hover-success: $hipa-green-200;
+$hipa-button-bg-hover-minimal-success: $hipa-green-500;
+$hipa-button-bg-active-success: $hipa-green-100;
+$hipa-button-bg-active-minimal-success: $hipa-green-400;
+$hipa-button-bg-disabled-success: $hipa-green-400;
 
-$hipa-button-bg-danger: $hipa-red300;
-$hipa-button-bg-hover-danger: $hipa-red200;
-$hipa-button-bg-hover-minimal-danger: $hipa-red500;
-$hipa-button-bg-active-danger: $hipa-red100;
-$hipa-button-bg-active-minimal-danger: $hipa-red400;
-$hipa-button-bg-disabled-danger: $hipa-red400;
+$hipa-button-bg-warning: $hipa-orange-300;
+$hipa-button-bg-hover-warning: $hipa-orange-200;
+$hipa-button-bg-hover-minimal-warning: $hipa-orange-500;
+$hipa-button-bg-active-warning: $hipa-orange-100;
+$hipa-button-bg-active-minimal-warning: $hipa-orange-400;
+$hipa-button-bg-disabled-warning: $hipa-orange-400;
 
-$hipa-button-minimal-text-none: $hipa-gray200;
-$hipa-button-minimal-text-disabled-none: $hipa-gray700;
-$hipa-button-minimal-bg-hover-none: $hipa-gray900;
-$hipa-button-minimal-bg-active-none: $hipa-gray700;
+$hipa-button-bg-danger: $hipa-red-300;
+$hipa-button-bg-hover-danger: $hipa-red-200;
+$hipa-button-bg-hover-minimal-danger: $hipa-red-500;
+$hipa-button-bg-active-danger: $hipa-red-100;
+$hipa-button-bg-active-minimal-danger: $hipa-red-400;
+$hipa-button-bg-disabled-danger: $hipa-red-400;
 
-$hipa-border-color: $hipa-gray700
+$hipa-button-minimal-text-none: $hipa-gray-dark-200;
+$hipa-button-minimal-text-disabled-none: $hipa-gray-200;
+$hipa-button-minimal-bg-hover-none: $hipa-gray-400;
+$hipa-button-minimal-bg-active-none: $hipa-gray-200;
+
+$hipa-border-color: $hipa-gray-200;

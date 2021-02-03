@@ -3,6 +3,7 @@
 
 @import "../../common/mixins";
 @import "../../common/variables";
+@import "../../common/variables-hipa";
 @import "../button/common";
 
 $control-background-color: $button-background-color !default;
@@ -13,6 +14,7 @@ $dark-control-background-color-hover: $dark-button-background-color-hover !defau
 $dark-control-background-color-active: $dark-button-background-color-active !default;
 
 $control-checked-background-color: nth(map-get($button-intents, "primary"), 1) !default;
+$control-unchecked-background-color: nth(map-get($button-intents, "primary"), 4) !default;
 $control-checked-background-color-hover: nth(map-get($button-intents, "primary"), 2) !default;
 $control-checked-background-color-active: nth(map-get($button-intents, "primary"), 3) !default;
 
@@ -39,7 +41,7 @@ $control-indicator-spacing: $pt-grid-size !default;
   }
 
   input:disabled#{$selector} ~ .#{$ns}-control-indicator {
-    background: rgba($control-checked-background-color, 0.5);
+    background: $control-unchecked-background-color;
     box-shadow: none;
   }
 
@@ -59,7 +61,7 @@ $control-indicator-spacing: $pt-grid-size !default;
     }
 
     input:disabled#{$selector} ~ .#{$ns}-control-indicator {
-      background: rgba($control-checked-background-color-active, 0.5);
+      background: $control-unchecked-background-color;
       box-shadow: none;
     }
   }
@@ -291,14 +293,14 @@ $control-indicator-spacing: $pt-grid-size !default;
 
   $switch-indicator-text-font-size: 0.7em;
 
-  $switch-background-color: rgba($gray4, 0.5) !default;
-  $switch-background-color-hover: rgba($gray2, 0.5) !default;
-  $switch-background-color-active: rgba($gray1, 0.5) !default;
-  $switch-background-color-disabled: $button-background-color-disabled !default;
-  $switch-checked-background-color: $control-checked-background-color !default;
-  $switch-checked-background-color-hover: $control-checked-background-color-hover !default;
-  $switch-checked-background-color-active: $control-checked-background-color-active !default;
-  $switch-checked-background-color-disabled: rgba($blue3, 0.5) !default;
+  $switch-background-color: $hipa-primary-light-color !default;
+  $switch-background-color-hover: $hipa-blue-dark-500 !default;
+  $switch-background-color-active: $hipa-blue-dark-400 !default;
+  $switch-background-color-disabled: $hipa-primary-disabled !default;
+  $switch-checked-background-color: nth(map-get($button-intents, "primary"), 1) !default;
+  $switch-checked-background-color-hover: nth(map-get($button-intents, "primary"), 2) !default;
+  $switch-checked-background-color-active: nth(map-get($button-intents, "primary"), 3) !default;
+  $switch-checked-background-color-disabled: $hipa-primary-disabled !default;
 
   $dark-switch-background-color: rgba($black, 0.5) !default;
   $dark-switch-background-color-hover: rgba($black, 0.7) !default;
@@ -310,7 +312,7 @@ $control-indicator-spacing: $pt-grid-size !default;
   $dark-switch-checked-background-color-disabled: rgba($blue1, 0.5) !default;
 
   $switch-indicator-background-color: $white !default;
-  $switch-indicator-background-color-disabled: rgba($white, 0.8) !default;
+  $switch-indicator-background-color-disabled: $white !default;
   $dark-switch-indicator-background-color: $dark-gray5 !default;
   $dark-switch-indicator-background-color-disabled: rgba($black, 0.4) !default;
 
@@ -376,7 +378,6 @@ $control-indicator-spacing: $pt-grid-size !default;
       &::before {
         background: $switch-indicator-background-color;
         border-radius: 50%;
-        box-shadow: $button-box-shadow-overlay;
         height: $switch-indicator-size;
         left: 0;
         margin: $switch-indicator-margin;
