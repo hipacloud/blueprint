@@ -18,10 +18,19 @@ $hipa-font-size10: 56px !default;
 $hipa-line-height1: 20px !default;
 $hipa-line-height2: 22px !default;
 
-$hipa-button-font-size: $hipa-font-size3;
+// Inputs
+$hipa-input-height: $hipa-grid-size * 3.5 !default;
+$hipa-input-height-large: $hipa-grid-size * 4.5 !default;
+$hipa-input-height-small: $hipa-grid-size * 3.5 !default;
+
+$hipa-input-text-disabled: $hipa-gray-100;
+$hipa-input-bg-disabled: $hipa-gray-500;
+
 $hipa-font-size-primary: $hipa-font-size3;
 $hipa-font-size-small: $hipa-font-size2;
-$hipa-font-size-big: $hipa-font-size4;
+$hipa-font-size-large: $hipa-font-size4;
+
+$hipa-button-font-size: $hipa-font-size3;
 
 $hipa-primary-color: $hipa-blue-dark-300;
 $hipa-primary-light-color: $hipa-blue-100;
@@ -68,3 +77,7 @@ $hipa-button-minimal-bg-hover-none: $hipa-gray-400;
 $hipa-button-minimal-bg-active-none: $hipa-gray-200;
 
 $hipa-border-color: $hipa-gray-200;
+$hipa-border-hover-color: $hipa-gray-100;
+$hipa-border-active-color: $hipa-blue-dark-300;
+
+$hipa-placeholder-color: $hipa-gray-dark-500;

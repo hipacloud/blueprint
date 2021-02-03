@@ -96,7 +96,7 @@ export class InputGroupExample extends React.PureComponent<IExampleProps, IInput
                         large={large}
                         leftIcon="filter"
                         onChange={this.handleFilterChange}
-                        placeholder="Filter histogram..."
+                        placeholder="输入关键字"
                         rightElement={maybeSpinner}
                         small={small}
                         value={filterValue}

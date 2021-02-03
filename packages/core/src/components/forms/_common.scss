@@ -3,17 +3,18 @@
 
 @import "~@blueprintjs/icons/src/icons";
 @import "../../common/variables";
+@import "../../common/variables-hipa";
 @import "../button/common";
 
-$input-padding-horizontal: $pt-grid-size !default;
-$input-small-padding: $pt-input-height-small - $pt-icon-size-standard !default;
+$input-padding-horizontal: $hipa-grid-size * 1.5 !default;
+$input-small-padding: $hipa-input-height-small - $pt-icon-size-standard !default;
 $input-font-weight: 400 !default;
 $input-transition: box-shadow $pt-transition-duration $pt-transition-ease;
 
 $input-color: $pt-text-color !default;
 $input-color-disabled: $button-color-disabled !default;
-$input-placeholder-color: $pt-text-color-disabled !default;
-$input-background-color: $white !default;
+$input-placeholder-color: $hipa-placeholder-color !default;
+$input-background-color: $hipa-white !default;
 $input-background-color-disabled: rgba($light-gray1, 0.5) !default;
 $input-shadow-color-focus: $pt-intent-primary !default;
 
@@ -82,35 +83,41 @@ $control-group-stack: (
   }
 }
 
+@mixin hipa-input-border() {
+  border: 1px solid $hipa-border-color;
+
+  &:hover {
+    border: 1px solid $hipa-border-hover-color;
+  }
+
+  &:focus {
+    border: 1px solid $hipa-border-active-color;
+  }
+}
+
 @mixin pt-input() {
   @include pt-input-placeholder();
+  @include hipa-input-border();
   appearance: none;
   background: $input-background-color;
-  border: none;
-  border-radius: $pt-border-radius;
-  box-shadow: input-transition-shadow($input-shadow-color-focus), $pt-input-box-shadow;
-  color: $input-color;
-  font-size: $pt-font-size;
+  border-radius: $hipa-border-radius;
+  color: $hipa-gray-dark-100;
+  font-size: $hipa-font-size-primary;
   font-weight: $input-font-weight;
-  height: $pt-input-height;
-  line-height: $pt-input-height;
+  height: $hipa-input-height;
+  line-height: $hipa-input-height;
 
   outline: none;
   padding: 0 $input-padding-horizontal;
   transition: $input-transition;
   vertical-align: middle;
 
-  &:focus,
-  &.#{$ns}-active {
-    box-shadow: input-transition-shadow($input-shadow-color-focus, true), $input-box-shadow-focus;
-  }
-
   &[type="search"],
   &.#{$ns}-round {
-    border-radius: $pt-input-height;
+    border-radius: $hipa-input-height;
     // override normalize.css
     box-sizing: border-box;
-    padding-left: $pt-grid-size;
+    padding-left: $hipa-grid-size;
   }
 
   &[readonly] {
@@ -132,17 +139,16 @@ $control-group-stack: (
 }
 
 @mixin pt-input-disabled() {
-  background: $input-background-color-disabled;
-  box-shadow: none;
-  color: $input-color-disabled;
+  background: $hipa-input-bg-disabled;
+  border: 1px solid $hipa-input-text-disabled;
+  color: $hipa-input-text-disabled;
   cursor: not-allowed;
   resize: none;
 }
 
 @mixin pt-input-large() {
-  font-size: $pt-font-size-large;
-  height: $pt-input-height-large;
-  line-height: $pt-input-height-large;
+  height: $hipa-input-height-large;
+  line-height: $hipa-input-height-large;
 
   &[type="search"],
   &.#{$ns}-round {
@@ -151,11 +157,8 @@ $control-group-stack: (
 }
 
 @mixin pt-input-small() {
-  font-size: $pt-font-size-small;
-  height: $pt-input-height-small;
-  line-height: $pt-input-height-small;
-  padding-left: $input-small-padding;
-  padding-right: $input-small-padding;
+  height: $hipa-input-height-small;
+  line-height: $hipa-input-height-small;
 
   &[type="search"],
   &.#{$ns}-round {
