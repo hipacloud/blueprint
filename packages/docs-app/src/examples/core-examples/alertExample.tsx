@@ -91,8 +91,8 @@ export class AlertExample extends React.PureComponent<IExampleProps<IBlueprintEx
                 <Alert
                     {...alertProps}
                     className={this.props.data.themeName}
-                    cancelButtonText="Cancel"
-                    confirmButtonText="Move to Trash"
+                    cancelButtonText="取消"
+                    confirmButtonText="删除"
                     icon="trash"
                     intent={Intent.DANGER}
                     isOpen={isOpen}
@@ -100,10 +100,8 @@ export class AlertExample extends React.PureComponent<IExampleProps<IBlueprintEx
                     onCancel={this.handleMoveCancel}
                     onConfirm={this.handleMoveConfirm}
                 >
-                    <p>
-                        Are you sure you want to move <b>filename</b> to Trash? You will be able to restore it later,
-                        but it will become private to you.
-                    </p>
+                    <div>确认删除吗？</div>
+                    <div>如果误删除，可以按下 c+z 撤销</div>
                 </Alert>
 
                 <Toaster ref={ref => (this.toaster = ref)} />

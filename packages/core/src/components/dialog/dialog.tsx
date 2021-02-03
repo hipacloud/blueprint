@@ -22,7 +22,7 @@ import { AbstractPureComponent2, Classes } from "../../common";
 import * as Errors from "../../common/errors";
 import { DISPLAYNAME_PREFIX, IProps, MaybeElement } from "../../common/props";
 import { Button } from "../button/buttons";
-import { H4 } from "../html/html";
+import { H5 } from "../html/html";
 import { Icon, IconName } from "../icon/icon";
 import { IBackdropProps, IOverlayableProps, Overlay } from "../overlay/overlay";
 
@@ -116,7 +116,7 @@ export class Dialog extends AbstractPureComponent2<IDialogProps> {
                 <Button
                     aria-label="Close"
                     className={Classes.DIALOG_CLOSE_BUTTON}
-                    icon={<Icon icon="small-cross" iconSize={Icon.SIZE_LARGE} />}
+                    icon={<Icon icon="small-cross" iconSize={Icon.SIZE_STANDARD} />}
                     minimal={true}
                     onClick={this.props.onClose}
                 />
@@ -134,7 +134,7 @@ export class Dialog extends AbstractPureComponent2<IDialogProps> {
         return (
             <div className={Classes.DIALOG_HEADER}>
                 <Icon icon={icon} iconSize={Icon.SIZE_LARGE} />
-                <H4>{title}</H4>
+                <H5>{title}</H5>
                 {this.maybeRenderCloseButton()}
             </div>
         );

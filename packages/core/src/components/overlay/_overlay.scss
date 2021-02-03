@@ -2,8 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 @import "../../common/variables";
+@import "../../common/variables-hipa";
 
-$overlay-background-color: rgba($black, 0.7) !default;
+$overlay-background-color: rgba($hipa-black, 0.25) !default;
 
 // restricts scrolling of underlying content while the overlay is open
 body.#{$ns}-overlay-open {

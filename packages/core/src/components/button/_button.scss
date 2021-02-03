@@ -63,7 +63,7 @@ Styleguide button
 
   // intents
   @each $intent, $colors in $button-intents {
-    &.#{$ns}-intent-#{$intent} {
+    &.#{$ns}-intent-#{$intent}:not([class*="-minimal"]) {
       @include pt-button-intent($colors...);
     }
   }
@@ -126,29 +126,6 @@ Styleguide button
     margin: 0 (-($pt-button-height - $pt-icon-size-standard) / 2);
   }
 
-  // dark theme
-  .#{$ns}-dark & {
-    &:not([class*="#{$ns}-intent-"]) {
-      @include pt-dark-button();
-
-      &[class*="#{$ns}-icon-"]::before {
-        color: $pt-dark-icon-color;
-      }
-
-      #{$icon-classes} {
-        color: $pt-dark-icon-color;
-      }
-    }
-
-    &[class*="#{$ns}-intent-"] {
-      @include pt-dark-button-intent();
-
-      .#{$ns}-button-spinner .#{$ns}-spinner-head {
-        stroke: $dark-progress-head-color;
-      }
-    }
-  }
-
   // disabled and intent button icon should use same color as text
   &:disabled,
   &.#{$ns}-disabled,
@@ -176,17 +153,17 @@ a.#{$ns}-button {
   text-align: center;
   text-decoration: none;
   transition: none;
-
-  &,
-  &:hover,
-  &:active {
-    // override global 'a' styles
-    color: $pt-text-color;
-  }
-
-  &.#{$ns}-disabled {
-    color: $button-color-disabled;
-  }
+  //
+  //&,
+  //&:hover,
+  //&:active {
+  //  // override global 'a' styles
+  //  color: $pt-text-color;
+  //}
+  //
+  //&.#{$ns}-disabled {
+  //  color: $button-color-disabled;
+  //}
 }
 
 .#{$ns}-button-text {

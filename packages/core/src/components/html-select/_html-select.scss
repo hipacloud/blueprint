@@ -74,25 +74,6 @@ Styleguide select
       width: 100%;
     }
   }
-
-  .#{$ns}-dark & {
-    select {
-      @extend %pt-dark-select;
-    }
-
-    option {
-      background-color: $dark-popover-background-color;
-      color: $pt-dark-text-color;
-    }
-
-    option:disabled {
-      color: $pt-dark-text-color-disabled;
-    }
-
-    &::after {
-      color: $pt-dark-icon-color;
-    }
-  }
 }
 
 .#{$ns}-select {

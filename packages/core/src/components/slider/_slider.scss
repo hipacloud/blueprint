@@ -98,19 +98,6 @@ $track-height: $track-size !default;
     pointer-events: none;
   }
 
-  .#{$ns}-dark & {
-    @include pt-dark-button();
-
-    &,
-    &:hover {
-      background-color: $dark-gray5;
-    }
-
-    &.#{$ns}-active {
-      background-color: $dark-gray3;
-    }
-  }
-
   .#{$ns}-dark .#{$ns}-disabled & {
     background: $gray1;
     border-color: $gray1;

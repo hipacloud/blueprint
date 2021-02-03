@@ -2,18 +2,23 @@
 // Licensed under the Apache License, Version 2.0.
 
 @import "../../common/variables";
+@import "../../common/variables-hipa";
 
 .#{$ns}-alert {
-  max-width: $pt-grid-size * 40;
-  padding: $pt-grid-size * 2;
+  max-width: $hipa-grid-size * 40;
+  padding: $hipa-grid-size * 2;
 }
 
 .#{$ns}-alert-body {
   display: flex;
+  font-size: $hipa-font-size-primary;
+  line-height: $hipa-line-height2;
+  min-height: $hipa-grid-size * 8.5;
 
   .#{$ns}-icon {
+    display: none;
     font-size: $pt-icon-size-large * 2;
-    margin-right: $pt-grid-size * 2;
+    margin-right: $hipa-grid-size * 2;
     margin-top: 0;
   }
 }
@@ -25,9 +30,9 @@
 .#{$ns}-alert-footer {
   display: flex;
   flex-direction: row-reverse;
-  margin-top: $pt-grid-size;
+  margin-top: $hipa-grid-size * 2;
 
   .#{$ns}-button {
-    margin-left: $pt-grid-size;
+    margin-left: $hipa-grid-size * 1.5;
   }
 }

@@ -1,0 +1,66 @@
+@import "colors-hipa";
+
+$hipa-border-radius: 2px !default;
+
+$hipa-grid-size: 8px !default;
+
+$hipa-font-size1: 12px !default;
+$hipa-font-size2: 13px !default;
+$hipa-font-size3: 14px !default;
+$hipa-font-size4: 16px !default;
+$hipa-font-size5: 20px !default;
+$hipa-font-size6: 24px !default;
+$hipa-font-size7: 30px !default;
+$hipa-font-size8: 38px !default;
+$hipa-font-size9: 46px !default;
+$hipa-font-size10: 56px !default;
+
+$hipa-line-height1: 20px !default;
+$hipa-line-height2: 22px !default;
+
+$hipa-button-font-size: $hipa-font-size3;
+$hipa-font-size-primary: $hipa-font-size3;
+$hipa-font-size-small: $hipa-font-size2;
+$hipa-font-size-big: $hipa-font-size4;
+
+$hipa-button-text-none: $hipa-gray200;
+$hipa-button-text-disabled-none: $hipa-gray700;
+$hipa-button-border-none: $hipa-gray700;
+$hipa-button-border-hover-none: $hipa-gray600;
+$hipa-button-border-active-none: $hipa-gray600;
+$hipa-button-border-disabled-none: $hipa-gray800;
+
+$hipa-button-bg-primary: $hipa-blue300;
+$hipa-button-bg-hover-primary: $hipa-blue200;
+$hipa-button-bg-hover-minimal-primary: $hipa-blue500;
+$hipa-button-bg-active-primary: $hipa-blue100;
+$hipa-button-bg-active-minimal-primary: $hipa-blue400;
+$hipa-button-bg-disabled-primary: $hipa-blue400;
+
+$hipa-button-bg-success: $hipa-green300;
+$hipa-button-bg-hover-success: $hipa-green200;
+$hipa-button-bg-hover-minimal-success: $hipa-green500;
+$hipa-button-bg-active-success: $hipa-green100;
+$hipa-button-bg-active-minimal-success: $hipa-green400;
+$hipa-button-bg-disabled-success: $hipa-green400;
+
+$hipa-button-bg-warning: $hipa-orange300;
+$hipa-button-bg-hover-warning: $hipa-orange200;
+$hipa-button-bg-hover-minimal-warning: $hipa-orange500;
+$hipa-button-bg-active-warning: $hipa-orange100;
+$hipa-button-bg-active-minimal-warning: $hipa-orange400;
+$hipa-button-bg-disabled-warning: $hipa-orange400;
+
+$hipa-button-bg-danger: $hipa-red300;
+$hipa-button-bg-hover-danger: $hipa-red200;
+$hipa-button-bg-hover-minimal-danger: $hipa-red500;
+$hipa-button-bg-active-danger: $hipa-red100;
+$hipa-button-bg-active-minimal-danger: $hipa-red400;
+$hipa-button-bg-disabled-danger: $hipa-red400;
+
+$hipa-button-minimal-text-none: $hipa-gray200;
+$hipa-button-minimal-text-disabled-none: $hipa-gray700;
+$hipa-button-minimal-bg-hover-none: $hipa-gray900;
+$hipa-button-minimal-bg-active-none: $hipa-gray700;
+
+$hipa-border-color: $hipa-gray700

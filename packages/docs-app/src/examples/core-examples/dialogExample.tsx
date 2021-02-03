@@ -56,7 +56,6 @@ export class DialogExample extends React.PureComponent<IExampleProps<IBlueprintE
                 <Button onClick={this.handleOpen}>Show dialog</Button>
                 <Dialog
                     className={this.props.data.themeName}
-                    icon="info-sign"
                     onClose={this.handleClose}
                     title="Palantir Foundry"
                     {...this.state}
