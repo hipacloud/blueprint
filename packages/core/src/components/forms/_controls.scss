@@ -24,25 +24,21 @@ $control-indicator-spacing: $pt-grid-size !default;
 
 @mixin control-checked-colors($selector: ":checked") {
   input#{$selector} ~ .#{$ns}-control-indicator {
-    background-color: $control-checked-background-color;
-    background-image: $button-intent-gradient;
-    box-shadow: $button-intent-box-shadow;
-    color: $white;
+    background-color: nth(map-get($button-intents, "primary"), 1);
+    box-shadow: none;
+    color: $hipa-white;
   }
 
   &:hover input#{$selector} ~ .#{$ns}-control-indicator {
-    background-color: $control-checked-background-color-hover;
-    box-shadow: $button-intent-box-shadow;
+    background-color: nth(map-get($button-intents, "primary"), 2);
   }
 
   input:not(:disabled):active#{$selector} ~ .#{$ns}-control-indicator {
-    background: $control-checked-background-color-active;
-    box-shadow: $button-intent-box-shadow-active;
+    background: nth(map-get($button-intents, "primary"), 3);
   }
 
   input:disabled#{$selector} ~ .#{$ns}-control-indicator {
-    background: $control-unchecked-background-color;
-    box-shadow: none;
+    background: $hipa-primary-disabled;
   }
 
   .#{$ns}-dark & {
@@ -93,18 +89,18 @@ $control-indicator-spacing: $pt-grid-size !default;
   cursor: pointer;
 
   display: block;
-  margin-bottom: $pt-grid-size;
+  margin-bottom: $hipa-grid-size;
   position: relative;
   text-transform: none;
 
   &.#{$ns}-disabled {
-    color: $pt-text-color-disabled;
+    color: $hipa-input-text-disabled;
     cursor: not-allowed;
   }
 
   &.#{$ns}-inline {
     display: inline-block;
-    margin-right: $pt-grid-size * 2;
+    margin-right: $hipa-grid-size * 2;
   }
 
   input {
@@ -117,17 +113,16 @@ $control-indicator-spacing: $pt-grid-size !default;
 
   .#{$ns}-control-indicator {
     background-clip: padding-box;
-    background-color: $control-background-color;
-    background-image: $button-gradient;
+    background-color: $hipa-white;
     border: none;
-    box-shadow: $button-box-shadow;
+    box-shadow: $button-box-shadow-hover;
     cursor: pointer;
     display: inline-block;
     // font-size is used to size indicator for all control types,
     // to reduce property changes needed across types and sizes (large).
     font-size: $control-indicator-size;
     height: 1em;
-    margin-right: $control-indicator-spacing;
+    margin-right: $hipa-grid-size;
     margin-top: -3px;
     position: relative;
     user-select: none;
@@ -143,17 +138,16 @@ $control-indicator-spacing: $pt-grid-size !default;
   }
 
   &:hover .#{$ns}-control-indicator {
-    background-color: $control-background-color-hover;
+    background: $hipa-input-bg-hover;
   }
 
   input:not(:disabled):active ~ .#{$ns}-control-indicator {
-    background: $control-background-color-active;
-    box-shadow: $button-box-shadow-active;
+    background: $hipa-input-bg-active;
   }
 
   input:disabled ~ .#{$ns}-control-indicator {
-    background: $button-background-color-disabled;
-    box-shadow: none;
+    background: $hipa-input-bg-disabled;
+    box-shadow: $button-box-shadow-disabled;
     cursor: not-allowed;
   }
 
@@ -216,7 +210,7 @@ $control-indicator-spacing: $pt-grid-size !default;
     @include control-checked-colors(":indeterminate");
 
     .#{$ns}-control-indicator {
-      border-radius: $pt-border-radius;
+      border-radius: $hipa-border-radius;
     }
 
     input:checked ~ .#{$ns}-control-indicator {
@@ -482,8 +476,7 @@ $control-indicator-spacing: $pt-grid-size !default;
     }
 
     input:disabled ~ .#{$ns}-control-indicator {
-      background: $dark-button-background-color-disabled;
-      box-shadow: none;
+      background: $hipa-input-bg-disabled;
       cursor: not-allowed;
     }
 
@@ -491,7 +484,7 @@ $control-indicator-spacing: $pt-grid-size !default;
       &:checked,
       &:indeterminate {
         ~ .#{$ns}-control-indicator {
-          color: $dark-button-color-disabled;
+          color: $hipa-primary-disabled;
         }
       }
     }
