@@ -2,12 +2,14 @@
 // Licensed under the Apache License, Version 2.0.
 
 @import "../../common/variables";
+@import "../../common/variables-hipa";
 @import "../../common/react-transition";
+@import "../../common/mixins-hipa";
 
 $toast-height: $pt-button-height-large !default;
 $toast-min-width: $pt-grid-size * 30 !default;
 $toast-max-width: $pt-grid-size * 50 !default;
-$toast-margin: $pt-grid-size * 2 !default;
+$toast-margin: $hipa-grid-size * 3 !default;
 
 .#{$ns}-toast {
   // toast transition properties
@@ -51,12 +53,13 @@ $toast-margin: $pt-grid-size * 2 !default;
   );
   align-items: flex-start;
   background-color: $white;
-  border-radius: $pt-border-radius;
-  box-shadow: $pt-elevation-shadow-3;
+  border-radius: $hipa-border-radius * 2;
+  box-shadow: $button-box-shadow;
   display: flex;
   margin: $toast-margin 0 0;
   max-width: $toast-max-width;
   min-width: $toast-min-width;
+  overflow: hidden;
 
   // toast is interactive even though container isn't
   pointer-events: all;
@@ -65,16 +68,23 @@ $toast-margin: $pt-grid-size * 2 !default;
   /* stylelint-disable-next-line declaration-no-important */
   position: relative !important;
 
+  &::before {
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 6px;
+  }
+
   .#{$ns}-button-group {
     flex: 0 0 auto;
-    padding: ($toast-height - $pt-button-height) / 2;
-    padding-left: 0;
+    padding: 10px;
   }
 
   > .#{$ns}-icon {
     color: $pt-icon-color;
-    margin: ($toast-height - $pt-icon-size-standard) / 2;
-    margin-right: 0;
+    margin: 16px 0 16px 18px;
   }
 
   &.#{$ns}-dark,
@@ -108,12 +118,12 @@ $toast-margin: $pt-grid-size * 2 !default;
     &::before,
     .#{$ns}-icon,
     &:active {
-      color: rgba($white, 0.7) !important;
+      color: $hipa-gray-dark-200 !important;
     }
 
     &:focus {
       // blue outline color shows poorly on colored bg
-      outline-color: rgba($white, 0.5);
+      outline-color: $hipa-gray-dark-300;
     }
 
     &:hover {
@@ -133,17 +143,23 @@ $toast-margin: $pt-grid-size * 2 !default;
   /* stylelint-enable declaration-no-important */
 
   // define these last so they override default dark colors above
-  @each $intent, $color in $pt-intent-colors {
+  @each $intent, $color in $hipa-intent-colors {
     &.#{$ns}-intent-#{$intent} {
-      background-color: $color;
-      color: $white;
+      &::before {
+        background-color: $color;
+      }
+
+      .#{$ns}-icon {
+        color: $color;
+      }
     }
   }
 }
 
 .#{$ns}-toast-message {
   flex: 1 1 auto;
-  padding: centered-text($toast-height);
+  line-height: 20px;
+  padding: 14px 4px;
   word-break: break-word;
 }
 

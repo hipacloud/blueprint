@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0.
 
 @import "../../common/variables";
+@import "../../common/variables-hipa";
 @import "../../common/mixins";
 @import "common";
 
@@ -35,10 +36,10 @@ Styleguide form-group
 .#{$ns}-form-group {
   display: flex;
   flex-direction: column;
-  margin: 0 0 ($pt-grid-size * 1.5);
+  margin: 0 0 ($hipa-grid-size * 2);
 
   label.#{$ns}-label {
-    margin-bottom: $pt-grid-size / 2;
+    margin-bottom: $hipa-grid-size / 2;
   }
 
   .#{$ns}-control {

@@ -1,5 +1,6 @@
 
 @import "../../common/variables";
+@import "../../common/variables-hipa";
 @import "./common";
 
 .#{$ns}-numeric-input {
@@ -9,15 +10,16 @@
     // let the buttons shrink to equal heights
     flex: 1 1 ($pt-button-height / 2 - 1);
     min-height: 0;
+    min-width: $hipa-input-height;
     padding: 0;
-    width: $pt-button-height;
+    width: $hipa-input-height;
 
     &:first-child {
-      border-radius: 0 $pt-border-radius 0 0;
+      border-radius: 0 $hipa-border-radius 0 0;
     }
 
     &:last-child {
-      border-radius: 0 0 $pt-border-radius 0;
+      border-radius: 0 0 $hipa-border-radius 0;
     }
   }
 
@@ -25,16 +27,17 @@
   .#{$ns}-button-group.#{$ns}-vertical {
     &:first-child > .#{$ns}-button {
       &:first-child {
-        border-radius: $pt-border-radius 0 0 0;
+        border-radius: $hipa-border-radius 0 0 0;
       }
 
       &:last-child {
-        border-radius: 0 0 0 $pt-border-radius;
+        border-radius: 0 0 0 $hipa-border-radius;
       }
     }
   }
 
   &.#{$ns}-large .#{$ns}-button-group.#{$ns}-vertical > .#{$ns}-button {
-    width: $pt-button-height-large;
+    min-width: $hipa-input-height-large / 2;
+    width: $hipa-input-height-large / 2;
   }
 }

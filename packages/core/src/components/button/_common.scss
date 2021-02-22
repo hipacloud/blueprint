@@ -8,8 +8,10 @@
 
 $button-border-width: 1px !default;
 $button-padding-x: $hipa-grid-size * 2.5 !default;
+$button-padding-tight-x: $hipa-grid-size !default;
 $button-padding: $hipa-grid-size * 0.5 $button-padding-x !default;
 $button-padding-small: $hipa-grid-size * 0.5 $button-padding-x !default;
+$button-padding-tight: $hipa-grid-size * 0.5 $button-padding-tight-x !default;
 $button-padding-large: $hipa-grid-size $button-padding-x !default;
 $button-icon-spacing: ($pt-button-height - $pt-icon-size-standard) / 2 !default;
 $button-icon-spacing-large: ($pt-button-height-large - $pt-icon-size-large) / 2 !default;
@@ -171,19 +173,24 @@ $button-minimal-intents: (
 }
 
 @mixin pt-button-height-large() {
-  @include pt-button-height($pt-button-height-large);
+  @include pt-button-height($hipa-button-height-large);
   @include pt-flex-margin(row, $button-icon-spacing-large);
   padding: $button-padding-large;
 }
 
 @mixin pt-button-height-default() {
-  @include pt-button-height($pt-button-height);
+  @include pt-button-height($hipa-button-height);
   padding: $button-padding;
 }
 
 @mixin pt-button-height-small() {
-  @include pt-button-height($pt-button-height-small);
+  @include pt-button-height($hipa-button-height-small);
   padding: $button-padding-small;
+}
+
+@mixin pt-button-height-tight() {
+  @include pt-button-height($hipa-button-height-small);
+  padding: $button-padding-tight;
 }
 
 @mixin pt-button() {
@@ -298,6 +305,31 @@ $button-minimal-intents: (
     &.#{$ns}-intent-#{$intent} {
       @include pt-button-minimal-intent($colors...);
     }
+  }
+}
+
+@mixin pt-button-ghost() {
+  background: none;
+  box-shadow: none;
+  color: $hipa-button-minimal-text-none;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.#{$ns}-active {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.#{$ns}-disabled {
+    background: none;
+    color: $hipa-button-minimal-text-disabled-none;
+    cursor: not-allowed;
   }
 }
 

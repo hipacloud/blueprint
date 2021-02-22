@@ -153,6 +153,7 @@ const INVALID_PROPS = [
     "round",
     "small",
     "text",
+    "tight",
 ];
 
 /**

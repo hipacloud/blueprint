@@ -59,7 +59,7 @@ export class Toast extends AbstractPureComponent2<IToastProps> {
     public static defaultProps: IToastProps = {
         className: "",
         message: "",
-        timeout: 5000,
+        timeout: 500000,
     };
 
     public static displayName = `${DISPLAYNAME_PREFIX}.Toast`;
@@ -79,7 +79,7 @@ export class Toast extends AbstractPureComponent2<IToastProps> {
                 <span className={Classes.TOAST_MESSAGE}>{message}</span>
                 <ButtonGroup minimal={true}>
                     {this.maybeRenderActionButton()}
-                    <Button icon="cross" onClick={this.handleCloseClick} />
+                    <Button tight icon="cross" onClick={this.handleCloseClick} />
                 </ButtonGroup>
             </div>
         );

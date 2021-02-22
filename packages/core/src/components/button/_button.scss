@@ -22,13 +22,14 @@ Markup:
 .#{$ns}-outlined - Subtle yet structured appearance
 .#{$ns}-large - Larger size
 .#{$ns}-small - Smaller size
+.#{$ns}-tight - Tighter padding
 .#{$ns}-fill - Fill parent container
 
 Styleguide button
 */
 .#{$ns}-button {
   @include pt-button-base();
-  @include pt-button-height($pt-button-height);
+  @include pt-button-height($hipa-button-height);
 
   &:empty {
     // override padding from other modifiers (for CSS icon support)
@@ -83,6 +84,11 @@ Styleguide button
     @include pt-button-height-small();
   }
 
+  &.#{$ns}-tight,
+  .#{$ns}-tight & {
+    @include pt-button-height-tight();
+  }
+
   // loading state
   &.#{$ns}-loading {
     position: relative;
@@ -106,12 +112,12 @@ Styleguide button
   &[class*="#{$ns}-icon-"] {
     &::before {
       @include pt-icon();
-      color: $pt-icon-color;
+      color: $hipa-currentColor;
     }
   }
 
   #{$icon-classes} {
-    color: $pt-icon-color;
+    color: $hipa-currentColor;
 
     &.#{$ns}-align-right {
       margin-left: $button-icon-spacing;
@@ -142,6 +148,11 @@ Styleguide button
     @include pt-button-minimal();
   }
 
+  &.#{$ns}-ghost {
+    @include pt-button-ghost();
+  }
+
+
   // outline is based on the styles of minimal
   &.#{$ns}-outlined {
     @include pt-button-minimal();
@@ -168,6 +179,8 @@ a.#{$ns}-button {
 
 .#{$ns}-button-text {
   // default: don't grow to fill but allow shrinking as necessary
+  align-items: center;
+  display: inline-flex;
   flex: 0 1 auto;
 }
 

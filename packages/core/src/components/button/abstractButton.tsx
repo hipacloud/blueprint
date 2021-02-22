@@ -79,6 +79,9 @@ export interface IButtonProps<E extends HTMLButtonElement | HTMLAnchorElement = 
     /** Whether this button should use small styles. */
     small?: boolean;
 
+    /** Whether this button should use tight paddings. */
+    tight?: boolean;
+
     /**
      * HTML `type` attribute of button. Accepted values are `"button"`, `"submit"`, and `"reset"`.
      * Note that this prop has no effect on `AnchorButton`; it only affects `Button`.
@@ -112,7 +115,7 @@ export abstract class AbstractButton<E extends HTMLButtonElement | HTMLAnchorEle
     public abstract render(): JSX.Element;
 
     protected getCommonButtonProps() {
-        const { active, alignText, fill, large, loading, outlined, minimal, small, tabIndex } = this.props;
+        const { active, alignText, fill, large, loading, outlined, minimal, small, tight, tabIndex } = this.props;
         const disabled = this.props.disabled || loading;
 
         const className = classNames(
@@ -126,6 +129,7 @@ export abstract class AbstractButton<E extends HTMLButtonElement | HTMLAnchorEle
                 [Classes.MINIMAL]: minimal,
                 [Classes.OUTLINED]: outlined,
                 [Classes.SMALL]: small,
+                [Classes.TIGHT]: tight,
             },
             Classes.alignmentClass(alignText),
             Classes.intentClass(this.props.intent),

@@ -1,5 +1,27 @@
 @import "colors-hipa";
 
+$hipa-font-family:
+  "PingFang SC",
+  -apple-system,
+  "Noto Sans",
+  "Helvetica Neue",
+  Helvetica, /* stylelint-disable-line value-keyword-case */
+  "Nimbus Sans L",
+  Arial, /* stylelint-disable-line value-keyword-case */
+  "Liberation Sans",
+  "Hiragino Sans GB",
+  "Noto Sans CJK SC",
+  "Source Han Sans SC",
+  "Source Han Sans CN",
+  "Microsoft YaHei",
+  "Wenquanyi Micro Hei",
+  "WenQuanYi Zen Hei",
+  "ST Heiti",
+  SimHei, /* stylelint-disable-line value-keyword-case */
+  "WenQuanYi Zen Hei Sharp",
+  sans-serif,
+  "Icons16" !default;
+
 $hipa-border-radius: 2px !default;
 
 $hipa-grid-size: 8px !default;
@@ -17,6 +39,14 @@ $hipa-font-size10: 56px !default;
 
 $hipa-line-height1: 20px !default;
 $hipa-line-height2: 22px !default;
+
+$hipa-button-height: $hipa-grid-size * 3.5 !default;
+$hipa-button-height-small: $hipa-grid-size * 3.5 !default;
+$hipa-button-height-smaller: $hipa-grid-size * 3.5 !default;
+$hipa-button-height-large: $hipa-grid-size * 4.5 !default;
+
+// Labels
+$hipa-label-text-color: $hipa-gray-dark-300;
 
 // Inputs
 $hipa-input-height: $hipa-grid-size * 3.5 !default;

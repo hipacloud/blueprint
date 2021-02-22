@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0.
 
 @import "../../common/variables";
+@import "../../common/variables-hipa";
 
 /*
 Labels
@@ -39,8 +40,10 @@ Styleguide label
 */
 
 label.#{$ns}-label {
+  color: $hipa-label-text-color;
   display: block;
-  margin-bottom: ($pt-grid-size * 1.5);
+  font-size: $hipa-font-size-small;
+  margin-bottom: ($hipa-grid-size / 2);
   margin-top: 0;
 
   .#{$ns}-html-select,

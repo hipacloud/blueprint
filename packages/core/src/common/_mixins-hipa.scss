@@ -1,0 +1,8 @@
+@import "colors-hipa";
+
+$hipa-intent-colors: (
+  "primary": $hipa-intent-primary,
+  "success": $hipa-intent-success,
+  "warning": $hipa-intent-warning,
+  "danger" : $hipa-intent-danger,
+) !default;

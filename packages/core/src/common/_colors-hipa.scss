@@ -1,6 +1,8 @@
 $hipa-white: #ffffff;
 $hipa-black: #000000;
 
+$hipa-currentColor: currentColor;
+
 $hipa-blue-dark-100: #007AA9;
 $hipa-blue-dark-200: #008ABE;
 $hipa-blue-dark-300: #0099D3;
@@ -39,3 +41,8 @@ $hipa-gray-200: #E6E6E6;
 $hipa-gray-300: #F0F0F0;
 $hipa-gray-400: #F6F6F6;
 $hipa-gray-500: #F9F9F9;
+
+$hipa-intent-primary: $hipa-blue-dark-300;
+$hipa-intent-success: $hipa-green-300;
+$hipa-intent-warning: $hipa-orange-300;
+$hipa-intent-danger: $hipa-red-300;
