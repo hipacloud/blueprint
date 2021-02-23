@@ -32,6 +32,25 @@ if (!fs.existsSync(GENERATED_SRC_DIR)) {
     fs.mkdirSync(GENERATED_SRC_DIR);
 }
 
+// find hipa svg folders
+const RESOURCE_FOLDERS = fs
+    .readdirSync(path.resolve(process.cwd(), `./resources/icons`))
+    .filter(name => /^\d+px$/.test(name));
+
+// list all svgs with iconName and folder
+const HIPA_ICONS_DATA = RESOURCE_FOLDERS.reduce((acc, cur) => {
+    const iconPath = path.resolve(process.cwd(), `./resources/icons/${cur}`);
+    fs.readdirSync(iconPath).map(fileName => {
+        if (/\.svg$/.test(fileName)) {
+            acc.push({
+                folder: cur,
+                iconName: fileName.substr(0, fileName.length - 4),
+            });
+        }
+    });
+    return acc;
+}, []);
+
 // map for iterating through icons with font support
 writeLinesToFile(
     "_icon-map.scss",
@@ -62,6 +81,13 @@ writeLinesToFile(
     ...ICONS_METADATA.map(icon => `export const ${toEnumName(icon)} = "${icon.iconName}";`),
 );
 
+// map ENUM_NAME to icon-name, must include ALL icons (not just those with font support)
+// so that we can reference their SVG paths
+writeLinesToFile(
+    "iconNames-hipa.ts",
+    ...HIPA_ICONS_DATA.map(icon => `export const ${toEnumName(icon)} = "${icon.iconName}-${icon.folder}";`),
+);
+
 (async () => {
     // SVG path strings. IIFE to unwrap async.
     writeLinesToFile(
@@ -78,8 +104,34 @@ writeLinesToFile(
     );
 })();
 
+(async () => {
+    // SVG strings. IIFE to unwrap async.
+    writeLinesToFile(
+        "iconSvg-hipa.ts",
+        'import { IconNameHipa } from "../iconName";',
+        "",
+        "export const IconSvgPathsHipa: Record<IconNameHipa, string[]> = {",
+        ...(await Promise.all(
+            HIPA_ICONS_DATA.map(async icon => {
+                const filepath = path.resolve(
+                    __dirname,
+                    `../icons/resources/icons/${icon.folder}/${icon.iconName}.svg`,
+                );
+                const svg = fs.readFileSync(filepath, "utf-8");
+                const pathStrings = await svgo
+                    .optimize(svg, { path: filepath })
+                    .then(({ data }) => data.match(/ d="[^"]+"/g) || [])
+                    .then(paths => paths.map(s => s.slice(3)));
+                return `    "${icon.iconName}-${icon.folder}": [${pathStrings.join(",\n")}],`;
+            }),
+        )),
+        "};",
+    );
+})();
+
 /**
  * Writes lines to given filename in GENERATED_SRC_DIR.
+ *
  * @param {string} filename
  * @param {Array<string>} lines
  */
@@ -91,6 +143,7 @@ async function writeLinesToFile(filename, ...lines) {
 
 /**
  * Returns Sass variable name `$pt-icon-{name}`.
+ *
  * @param {IconMetadata} icon
  */
 function toSassVariable(icon) {
@@ -100,15 +153,21 @@ function toSassVariable(icon) {
 /**
  * Converts iconName to uppercase constant name.
  * Example: `"align-left"` &rArr; `"ALIGN_LEFT"`
+ *
  * @param {IconMetadata} icon
  */
 function toEnumName(icon) {
-    return icon.iconName.replace(/-/g, "_").toUpperCase();
+    const enumName = icon.iconName.replace(/-/g, "_").toUpperCase();
+    if (icon.folder) {
+        return `${enumName}_${icon.folder.toUpperCase()}`;
+    }
+    return enumName;
 }
 
 /**
  * Loads SVG file for each icon, extracts path strings `d="path-string"`,
  * and constructs map of icon name to array of path strings.
+ *
  * @param {string} objectName
  * @param {16 | 20} size
  */

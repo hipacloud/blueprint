@@ -7,6 +7,18 @@ See the [**Icons package**](#icons) for a searchable list of all available UI ic
 </div>
 
 <div class="@ns-callout @ns-intent-primary @ns-icon-info-sign">
+    <h4 class="@ns-heading">如何添加 hipa 定制版 icon</h4>
+
+1. 从 figma 中下载所需的 svg 素材（命名规范为数字/小写字母/中划线.svg）至 ```/packages/icons/resources/icons/```
+2. 根据素材的还原尺寸，放在相应的 folder 中
+3. 在 ```/packages/icons``` 下运行 ```yarn compile```
+4. node脚本会将素材生成 svg path 并匹配 IconName 渲染，不需要关心此过程。例如： ```/packages/icons/resources/icons/16px/add-table-dark.svg``` 会生成 ```"add-table-dark-16px"``` 的 icon prop, 使用方式同理 ```<Icon icon="add-table-dark-16px" />```
+5. 生成的 icon prop 类型为 ```IconNameHipa```
+6. 旧的 blueprint icon 可继续使用，后续完成全量替换后再干掉
+
+</div>
+
+<div class="@ns-callout @ns-intent-primary @ns-icon-info-sign">
     <h4 class="@ns-heading">SVG icons in 2.0</h4>
 
 Blueprint 2.0 introduced SVG icon support and moved icon resources to a separate __@blueprintjs/icons__ package.

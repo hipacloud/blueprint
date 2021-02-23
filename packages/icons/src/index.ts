@@ -19,4 +19,7 @@ import * as IconNames from "./generated/iconNames";
 
 export { IconContents, IconNames };
 export { IconSvgPaths16, IconSvgPaths20 } from "./generated/iconSvgPaths";
-export { IconName } from "./iconName";
+export { IconSvgPathsHipa } from "./generated/iconSvg-hipa";
+
+export * as IconsHipa from "./generated/iconSvg-hipa";
+export { IconName, IconNameHipa } from "./iconName";

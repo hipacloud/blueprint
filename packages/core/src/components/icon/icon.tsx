@@ -18,7 +18,7 @@ import classNames from "classnames";
 import * as React from "react";
 import { polyfill } from "react-lifecycles-compat";
 
-import { IconName, IconSvgPaths16, IconSvgPaths20 } from "@blueprintjs/icons";
+import { IconName, IconSvgPaths16, IconSvgPaths20, IconSvgPathsHipa, IconNameHipa } from "@blueprintjs/icons";
 
 import { AbstractPureComponent2, Classes, DISPLAYNAME_PREFIX, IIntentProps, IProps, MaybeElement } from "../../common";
 
@@ -57,7 +57,7 @@ export interface IIconProps extends IIntentProps, IProps {
      *   should avoid using `<Icon icon={<Element />}` directly; simply render
      *   `<Element />` instead.
      */
-    icon: IconName | MaybeElement;
+    icon: IconName | IconNameHipa | MaybeElement;
 
     /**
      * Size of the icon, in pixels. Blueprint contains 16px and 20px SVG icon
@@ -137,9 +137,9 @@ export class Icon extends AbstractPureComponent2<IIconProps & React.DOMAttribute
     }
 
     /** Render `<path>` elements for the given icon name. Returns `null` if name is unknown. */
-    private renderSvgPaths(pathsSize: number, iconName: IconName): JSX.Element[] | null {
+    private renderSvgPaths(pathsSize: number, iconName: IconName | IconNameHipa): JSX.Element[] | null {
         const svgPathsRecord = pathsSize === Icon.SIZE_STANDARD ? IconSvgPaths16 : IconSvgPaths20;
-        const pathStrings = svgPathsRecord[iconName];
+        const pathStrings = IconSvgPathsHipa[iconName as IconNameHipa] || svgPathsRecord[iconName as IconName];
         if (pathStrings == null) {
             return null;
         }
