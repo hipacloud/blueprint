@@ -170,9 +170,9 @@ export class Alert extends AbstractPureComponent2<IAlertProps> {
                     <div className={Classes.ALERT_CONTENTS}>{children}</div>
                 </div>
                 <div className={Classes.ALERT_FOOTER}>
-                    <Button loading={loading} intent={intent} text={confirmButtonText} onClick={this.handleConfirm} />
+                    <Button tight={false} loading={loading} intent={intent} text={confirmButtonText} onClick={this.handleConfirm} />
                     {cancelButtonText && (
-                        <Button text={cancelButtonText} disabled={loading} onClick={this.handleCancel} />
+                        <Button tight={false} text={cancelButtonText} disabled={loading} onClick={this.handleCancel} />
                     )}
                 </div>
             </Dialog>

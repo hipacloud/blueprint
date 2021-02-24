@@ -79,8 +79,15 @@ export interface IButtonProps<E extends HTMLButtonElement | HTMLAnchorElement = 
     /** Whether this button should use small styles. */
     small?: boolean;
 
-    /** Whether this button should use tight paddings. */
+    /** Whether this button should use tight paddings.
+     * @default true
+     */
     tight?: boolean;
+
+    /** Whether this button should use transparent hovers.
+     * @default false
+     */
+    ghost?: boolean;
 
     /**
      * HTML `type` attribute of button. Accepted values are `"button"`, `"submit"`, and `"reset"`.
@@ -115,7 +122,7 @@ export abstract class AbstractButton<E extends HTMLButtonElement | HTMLAnchorEle
     public abstract render(): JSX.Element;
 
     protected getCommonButtonProps() {
-        const { active, alignText, fill, large, loading, outlined, minimal, small, tight, tabIndex } = this.props;
+        const { active, alignText, fill, large, loading, outlined, minimal, small, tight = true, ghost, tabIndex } = this.props;
         const disabled = this.props.disabled || loading;
 
         const className = classNames(
@@ -130,6 +137,7 @@ export abstract class AbstractButton<E extends HTMLButtonElement | HTMLAnchorEle
                 [Classes.OUTLINED]: outlined,
                 [Classes.SMALL]: small,
                 [Classes.TIGHT]: tight,
+                [Classes.GHOST]: ghost,
             },
             Classes.alignmentClass(alignText),
             Classes.intentClass(this.props.intent),
@@ -183,10 +191,10 @@ export abstract class AbstractButton<E extends HTMLButtonElement | HTMLAnchorEle
     };
 
     protected renderChildren(): React.ReactNode {
-        const { children, icon, loading, rightIcon, text } = this.props;
+        const { children, icon, iconSize, loading, rightIcon, text } = this.props;
         return [
             loading && <Spinner key="loading" className={Classes.BUTTON_SPINNER} size={Icon.SIZE_LARGE} />,
-            <Icon key="leftIcon" icon={icon} />,
+            <Icon key="leftIcon" icon={icon} iconSize={iconSize} />,
             (!Utils.isReactNodeEmpty(text) || !Utils.isReactNodeEmpty(children)) && (
                 <span key="text" className={Classes.BUTTON_TEXT}>
                     {text}

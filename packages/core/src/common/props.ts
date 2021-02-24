@@ -16,7 +16,7 @@
 
 import * as React from "react";
 
-import { IconName } from "@blueprintjs/icons";
+import { IconName, IconNameHipa } from "@blueprintjs/icons";
 
 import { Intent } from "./intent";
 import { IRef } from "./refs";
@@ -64,7 +64,10 @@ export interface IActionProps extends IIntentProps, IProps {
     disabled?: boolean;
 
     /** Name of a Blueprint UI icon (or an icon element) to render before the text. */
-    icon?: IconName | MaybeElement;
+    icon?: IconName | IconNameHipa | MaybeElement;
+
+    /** Name of a Blueprint UI icon (or an icon element) to render before the text. */
+    iconSize?: number;
 
     /** Click event handler. */
     onClick?: (event: React.MouseEvent<HTMLElement>) => void;
@@ -154,6 +157,7 @@ const INVALID_PROPS = [
     "small",
     "text",
     "tight",
+    "ghost",
 ];
 
 /**

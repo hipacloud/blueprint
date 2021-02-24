@@ -18,10 +18,11 @@ import classNames from "classnames";
 import * as React from "react";
 import { polyfill } from "react-lifecycles-compat";
 
-import { IconName, IconSvgPaths16, IconSvgPaths20, IconSvgPathsHipa, IconNameHipa } from "@blueprintjs/icons";
+import { IconName as BPIconName, IconNameHipa, IconSvgPaths16, IconSvgPaths20, IconSvgPathsHipa } from "@blueprintjs/icons";
 
 import { AbstractPureComponent2, Classes, DISPLAYNAME_PREFIX, IIntentProps, IProps, MaybeElement } from "../../common";
 
+type IconName =  BPIconName | IconNameHipa;
 export { IconName };
 
 export interface IIconProps extends IIntentProps, IProps {
@@ -57,7 +58,7 @@ export interface IIconProps extends IIntentProps, IProps {
      *   should avoid using `<Icon icon={<Element />}` directly; simply render
      *   `<Element />` instead.
      */
-    icon: IconName | IconNameHipa | MaybeElement;
+    icon: IconName | MaybeElement;
 
     /**
      * Size of the icon, in pixels. Blueprint contains 16px and 20px SVG icon
@@ -113,13 +114,27 @@ export class Icon extends AbstractPureComponent2<IIconProps & React.DOMAttribute
             ...htmlprops
         } = this.props;
 
+        // eslint-disable-next-line deprecation/deprecation
+        const classes = classNames(Classes.ICON, Classes.iconClass(icon), Classes.intentClass(intent), className);
+
+        // use inner html temporarily to render svg. can be replaced with img URI someday.
+        const svgString = IconSvgPathsHipa[icon as IconNameHipa];
+        if (svgString) {
+            return React.createElement(
+                tagName,
+                {
+                    ...htmlprops,
+                    className: classes,
+                    title: htmlTitle,
+                    dangerouslySetInnerHTML: { __html: svgString },
+                },
+            );
+        }
         // choose which pixel grid is most appropriate for given icon size
         const pixelGridSize = iconSize >= Icon.SIZE_LARGE ? Icon.SIZE_LARGE : Icon.SIZE_STANDARD;
         // render path elements, or nothing if icon name is unknown.
         const paths = this.renderSvgPaths(pixelGridSize, icon);
 
-        // eslint-disable-next-line deprecation/deprecation
-        const classes = classNames(Classes.ICON, Classes.iconClass(icon), Classes.intentClass(intent), className);
         const viewBox = `0 0 ${pixelGridSize} ${pixelGridSize}`;
 
         return React.createElement(
@@ -137,9 +152,9 @@ export class Icon extends AbstractPureComponent2<IIconProps & React.DOMAttribute
     }
 
     /** Render `<path>` elements for the given icon name. Returns `null` if name is unknown. */
-    private renderSvgPaths(pathsSize: number, iconName: IconName | IconNameHipa): JSX.Element[] | null {
+    private renderSvgPaths(pathsSize: number, iconName: IconName): JSX.Element[] | null {
         const svgPathsRecord = pathsSize === Icon.SIZE_STANDARD ? IconSvgPaths16 : IconSvgPaths20;
-        const pathStrings = IconSvgPathsHipa[iconName as IconNameHipa] || svgPathsRecord[iconName as IconName];
+        const pathStrings = svgPathsRecord[iconName as BPIconName];
         if (pathStrings == null) {
             return null;
         }

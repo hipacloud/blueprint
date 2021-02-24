@@ -110,7 +110,7 @@ writeLinesToFile(
         "iconSvg-hipa.ts",
         'import { IconNameHipa } from "../iconName";',
         "",
-        "export const IconSvgPathsHipa: Record<IconNameHipa, string[]> = {",
+        "export const IconSvgPathsHipa: Record<IconNameHipa, string> = {",
         ...(await Promise.all(
             HIPA_ICONS_DATA.map(async icon => {
                 const filepath = path.resolve(
@@ -118,11 +118,8 @@ writeLinesToFile(
                     `../icons/resources/icons/${icon.folder}/${icon.iconName}.svg`,
                 );
                 const svg = fs.readFileSync(filepath, "utf-8");
-                const pathStrings = await svgo
-                    .optimize(svg, { path: filepath })
-                    .then(({ data }) => data.match(/ d="[^"]+"/g) || [])
-                    .then(paths => paths.map(s => s.slice(3)));
-                return `    "${icon.iconName}-${icon.folder}": [${pathStrings.join(",\n")}],`;
+                const { data } = await svgo.optimize(svg, { path: filepath });
+                return `    "${icon.iconName}-${icon.folder}": '${data}',`;
             }),
         )),
         "};",

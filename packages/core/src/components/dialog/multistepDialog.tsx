@@ -160,7 +160,7 @@ export class MultistepDialog extends AbstractPureComponent2<IMultistepDialogProp
     private renderButtons() {
         const buttons = [];
         if (this.state.selectedIndex > 0) {
-            buttons.push(<Button key="back" onClick={this.getBackClickHandler()} text="Back" />);
+            buttons.push(<Button tight={false} key="back" onClick={this.getBackClickHandler()} text="Back" />);
         }
 
         if (this.state.selectedIndex === this.getDialogStepChildren().length - 1) {
@@ -168,6 +168,7 @@ export class MultistepDialog extends AbstractPureComponent2<IMultistepDialogProp
         } else {
             buttons.push(
                 <Button
+                    tight={false}
                     intent="primary"
                     key="next"
                     onClick={this.getNextClickHandler()}
@@ -204,7 +205,7 @@ export class MultistepDialog extends AbstractPureComponent2<IMultistepDialogProp
     }
 
     private renderFinalButton() {
-        return <Button intent="primary" key="final" text="Submit" {...this.props.finalButtonProps} />;
+        return <Button tight={false} intent="primary" key="final" text="Submit" {...this.props.finalButtonProps} />;
     }
 
     /** Filters children to only `<DialogStep>`s */
