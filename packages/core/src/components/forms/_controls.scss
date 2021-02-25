@@ -13,10 +13,10 @@ $dark-control-background-color: $dark-button-background-color !default;
 $dark-control-background-color-hover: $dark-button-background-color-hover !default;
 $dark-control-background-color-active: $dark-button-background-color-active !default;
 
-$control-checked-background-color: nth(map-get($button-intents, "primary"), 1) !default;
-$control-unchecked-background-color: nth(map-get($button-intents, "primary"), 4) !default;
-$control-checked-background-color-hover: nth(map-get($button-intents, "primary"), 2) !default;
-$control-checked-background-color-active: nth(map-get($button-intents, "primary"), 3) !default;
+$control-checked-background-color: nth(map-get($hipa-button-intents, "primary"), 1) !default;
+$control-unchecked-background-color: nth(map-get($hipa-button-intents, "primary"), 4) !default;
+$control-checked-background-color-hover: nth(map-get($hipa-button-intents, "primary"), 2) !default;
+$control-checked-background-color-active: nth(map-get($hipa-button-intents, "primary"), 3) !default;
 
 $control-indicator-size: $pt-icon-size-standard !default;
 $control-indicator-size-large: $pt-icon-size-large !default;
@@ -24,17 +24,17 @@ $control-indicator-spacing: $pt-grid-size !default;
 
 @mixin control-checked-colors($selector: ":checked") {
   input#{$selector} ~ .#{$ns}-control-indicator {
-    background-color: nth(map-get($button-intents, "primary"), 1);
+    background-color: nth(map-get($hipa-button-intents, "primary"), 1);
     box-shadow: none;
     color: $hipa-white;
   }
 
   &:hover input#{$selector} ~ .#{$ns}-control-indicator {
-    background-color: nth(map-get($button-intents, "primary"), 2);
+    background-color: nth(map-get($hipa-button-intents, "primary"), 2);
   }
 
   input:not(:disabled):active#{$selector} ~ .#{$ns}-control-indicator {
-    background: nth(map-get($button-intents, "primary"), 3);
+    background: nth(map-get($hipa-button-intents, "primary"), 3);
   }
 
   input:disabled#{$selector} ~ .#{$ns}-control-indicator {
@@ -291,9 +291,9 @@ $control-indicator-spacing: $pt-grid-size !default;
   $switch-background-color-hover: $hipa-blue-dark-500 !default;
   $switch-background-color-active: $hipa-blue-dark-400 !default;
   $switch-background-color-disabled: $hipa-primary-disabled !default;
-  $switch-checked-background-color: nth(map-get($button-intents, "primary"), 1) !default;
-  $switch-checked-background-color-hover: nth(map-get($button-intents, "primary"), 2) !default;
-  $switch-checked-background-color-active: nth(map-get($button-intents, "primary"), 3) !default;
+  $switch-checked-background-color: nth(map-get($hipa-button-intents, "primary"), 1) !default;
+  $switch-checked-background-color-hover: nth(map-get($hipa-button-intents, "primary"), 2) !default;
+  $switch-checked-background-color-active: nth(map-get($hipa-button-intents, "primary"), 3) !default;
   $switch-checked-background-color-disabled: $hipa-primary-disabled !default;
 
   $dark-switch-background-color: rgba($black, 0.5) !default;

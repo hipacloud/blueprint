@@ -63,7 +63,7 @@ Styleguide button
   }
 
   // intents
-  @each $intent, $colors in $button-intents {
+  @each $intent, $colors in $hipa-button-intents {
     &.#{$ns}-intent-#{$intent}:not([class*="-minimal"]) {
       @include pt-button-intent($colors...);
     }

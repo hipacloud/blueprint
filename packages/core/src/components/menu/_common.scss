@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0.
 @import "../../common/variables";
 @import "../../common/variables-hipa";
+@import "../../common/mixins-hipa";
 
 $half-grid-size: $pt-grid-size / 2 !default;
 
@@ -80,7 +81,7 @@ $dark-menu-item-color-active: $dark-minimal-button-background-color-active !defa
   }
 }
 
-@mixin menu-item-intent($text-colors: $pt-intent-text-colors) {
+@mixin menu-item-intent($text-colors: $hipa-intent-colors) {
   @each $intent, $color in $text-colors {
     &.#{$ns}-intent-#{$intent} {
       color: $color;
@@ -97,11 +98,11 @@ $dark-menu-item-color-active: $dark-minimal-button-background-color-active !defa
 
       &:hover,
       &.#{$ns}-active {
-        background-color: nth(map-get($button-intents, $intent), 1);
+        background-color: nth(map-get($hipa-button-minimal-intents, $intent), 3);
       }
 
       &:active {
-        background-color: nth(map-get($button-intents, $intent), 2);
+        background-color: nth(map-get($hipa-button-minimal-intents, $intent), 4);
       }
 
       &:hover,
@@ -111,7 +112,7 @@ $dark-menu-item-color-active: $dark-minimal-button-background-color-active !defa
         &::before,
         &::after,
         .#{$ns}-menu-item-label {
-          color: $white;
+          color: $color;
         }
       }
     }

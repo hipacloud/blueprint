@@ -27,7 +27,7 @@ $banner-height: $pt-grid-size * 4;
   top: 0;
   z-index: $pt-z-index-overlay - 1;
 
-  @each $intent, $colors in $button-intents {
+  @each $intent, $colors in $hipa-button-intents {
     &.#{$ns}-intent-#{$intent} {
       background: nth($colors, 1);
 

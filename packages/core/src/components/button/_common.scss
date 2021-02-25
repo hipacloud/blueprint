@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0.
 
 @import "../../common/mixins";
+@import "../../common/mixins-hipa";
 @import "../../common/variables";
 @import "../../common/variables-hipa";
 @import "../progress-bar/common";
@@ -95,62 +96,6 @@ $dark-minimal-button-background-color-active: rgba($gray3, 0.3) !default;
 $button-outlined-width: 1px !default;
 $button-outlined-border-intent-opacity: 0.6 !default;
 $button-outlined-border-disabled-intent-opacity: 0.2 !default;
-
-// "intent": (default, hover, active, disabled, colors)
-$button-intents: (
-  "primary": (
-    $hipa-button-bg-primary,
-    $hipa-button-bg-hover-primary,
-    $hipa-button-bg-active-primary,
-    $hipa-button-bg-disabled-primary
-  ),
-  "success": (
-    $hipa-button-bg-success,
-    $hipa-button-bg-hover-success,
-    $hipa-button-bg-active-success,
-    $hipa-button-bg-disabled-success
-  ),
-  "warning": (
-    $hipa-button-bg-warning,
-    $hipa-button-bg-hover-warning,
-    $hipa-button-bg-active-warning,
-    $hipa-button-bg-disabled-warning
-  ),
-  "danger": (
-    $hipa-button-bg-danger,
-    $hipa-button-bg-hover-danger,
-    $hipa-button-bg-active-danger,
-    $hipa-button-bg-disabled-danger
-  ),
-) !default;
-
-// "intent": (text, disabled_text, hover, active colors)
-$button-minimal-intents: (
-  "primary": (
-    $hipa-button-bg-primary,
-    $hipa-button-bg-hover-minimal-primary,
-    $hipa-button-bg-hover-minimal-primary,
-    $hipa-button-bg-active-minimal-primary
-  ),
-  "success": (
-    $hipa-button-bg-success,
-    $hipa-button-bg-hover-minimal-success,
-    $hipa-button-bg-hover-minimal-success,
-    $hipa-button-bg-active-minimal-success
-  ),
-  "warning": (
-    $hipa-button-bg-warning,
-    $hipa-button-bg-hover-minimal-warning,
-    $hipa-button-bg-hover-minimal-warning,
-    $hipa-button-bg-active-minimal-warning
-  ),
-  "danger": (
-    $hipa-button-bg-danger,
-    $hipa-button-bg-hover-minimal-danger,
-    $hipa-button-bg-hover-minimal-danger,
-    $hipa-button-bg-active-minimal-danger
-  ),
-) !default;
 
 @mixin pt-button-base() {
   @include pt-flex-container(row, $button-icon-spacing, $inline: inline);
@@ -301,7 +246,7 @@ $button-minimal-intents: (
     cursor: not-allowed;
   }
 
-  @each $intent, $colors in $button-minimal-intents {
+  @each $intent, $colors in $hipa-button-minimal-intents {
     &.#{$ns}-intent-#{$intent} {
       @include pt-button-minimal-intent($colors...);
     }
@@ -311,7 +256,7 @@ $button-minimal-intents: (
 @mixin pt-button-ghost() {
   background: none;
   box-shadow: none;
-  color: $hipa-button-minimal-text-none;
+  color: $hipa-text-color;
 
   &:hover {
     background: rgba(0, 0, 0, 0.1);
@@ -426,7 +371,7 @@ $button-minimal-intents: (
     @include pt-dark-button-outlined();
   }
 
-  @each $intent, $colors in $button-intents {
+  @each $intent, $colors in $hipa-button-intents {
     &.#{$ns}-intent-#{$intent} {
       @include pt-button-outlined-intent(
         map-get($pt-intent-text-colors, $intent),

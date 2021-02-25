@@ -59,7 +59,7 @@ export class Toast extends AbstractPureComponent2<IToastProps> {
     public static defaultProps: IToastProps = {
         className: "",
         message: "",
-        timeout: 500000,
+        timeout: 5000,
     };
 
     public static displayName = `${DISPLAYNAME_PREFIX}.Toast`;

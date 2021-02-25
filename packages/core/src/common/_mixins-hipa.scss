@@ -1,8 +1,65 @@
 @import "colors-hipa";
+@import "variables-hipa";
 
 $hipa-intent-colors: (
   "primary": $hipa-intent-primary,
   "success": $hipa-intent-success,
   "warning": $hipa-intent-warning,
   "danger" : $hipa-intent-danger,
+) !default;
+
+// "intent": (default, hover, active, disabled, colors)
+$hipa-button-intents: (
+  "primary": (
+    $hipa-button-bg-primary,
+    $hipa-button-bg-hover-primary,
+    $hipa-button-bg-active-primary,
+    $hipa-button-bg-disabled-primary
+  ),
+  "success": (
+    $hipa-button-bg-success,
+    $hipa-button-bg-hover-success,
+    $hipa-button-bg-active-success,
+    $hipa-button-bg-disabled-success
+  ),
+  "warning": (
+    $hipa-button-bg-warning,
+    $hipa-button-bg-hover-warning,
+    $hipa-button-bg-active-warning,
+    $hipa-button-bg-disabled-warning
+  ),
+  "danger": (
+    $hipa-button-bg-danger,
+    $hipa-button-bg-hover-danger,
+    $hipa-button-bg-active-danger,
+    $hipa-button-bg-disabled-danger
+  ),
+) !default;
+
+// "intent": (text, disabled_text, hover, active colors)
+$hipa-button-minimal-intents: (
+  "primary": (
+    $hipa-button-bg-primary,
+    $hipa-button-bg-hover-minimal-primary,
+    $hipa-button-bg-hover-minimal-primary,
+    $hipa-button-bg-active-minimal-primary
+  ),
+  "success": (
+    $hipa-button-bg-success,
+    $hipa-button-bg-hover-minimal-success,
+    $hipa-button-bg-hover-minimal-success,
+    $hipa-button-bg-active-minimal-success
+  ),
+  "warning": (
+    $hipa-button-bg-warning,
+    $hipa-button-bg-hover-minimal-warning,
+    $hipa-button-bg-hover-minimal-warning,
+    $hipa-button-bg-active-minimal-warning
+  ),
+  "danger": (
+    $hipa-button-bg-danger,
+    $hipa-button-bg-hover-minimal-danger,
+    $hipa-button-bg-hover-minimal-danger,
+    $hipa-button-bg-active-minimal-danger
+  ),
 ) !default;

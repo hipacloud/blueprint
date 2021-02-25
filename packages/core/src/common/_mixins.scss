@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0.
 
 @import "colors";
+@import "colors-hipa";
 @import "flex";
 
 $pt-intent-colors: (
@@ -12,10 +13,10 @@ $pt-intent-colors: (
 ) !default;
 
 $pt-intent-text-colors: (
-  "primary": $blue2,
-  "success": $green2,
-  "warning": $orange2,
-  "danger" : $red2,
+  "primary": $hipa-blue-dark-300,
+  "success": $hipa-green-300,
+  "warning": $hipa-orange-300,
+  "danger" : $hipa-red-300,
 ) !default;
 
 $pt-dark-intent-text-colors: (
