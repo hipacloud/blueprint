@@ -1,0 +1,44 @@
+name: blueprint
+
+on:
+  push:
+    branches:
+      - refresh3
+      - ci-test
+
+env:
+  VERSION: 3
+
+jobs:
+  build-blueprint:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '12'
+    - run: yarn
+    - run: yarn ci
+    - name: Set blueprint tag
+      run: |
+        echo "BLUEPRINT_TAG=${VERSION}-${GITHUB_REF##*/}-`date +'%Y%m%d'`-${GITHUB_SHA::8}-${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
+    - name: Upload to oss
+      id: upload_to_oss
+      uses: blunt1973/upload-to-oss@v0.2.1
+      with:
+        key-id: ${{ secrets.HIPA_NPM_OSS_ACCESS_KEY_ID }}
+        key-secret: ${{ secrets.HIPA_NPM_OSS_SECRET_ACCESS_KEY }}
+        endpoint: ${{ secrets.HIPA_NPM_OSS_ENDPOINT }}
+        bucket: ${{ secrets.HIPA_NPM_OSS_NAME }}
+        asset-path: ./artifacts/
+        target-path: /blueprint/${{ env.BLUEPRINT_TAG }}/
+    - name: Wechatwork robot notify
+      if: success()
+      uses: blunt1973/wechatwork-action@master
+      with:
+        url: ${{ secrets.HIPA_NPM_BUILD_WECOM_WEBHOOK}}
+        type: markdown
+        content: |
+          buleprint build success, version:
+          ${{ env.BLUEPRINT_TAG }}
+
