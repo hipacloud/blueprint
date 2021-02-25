@@ -6,7 +6,7 @@ set -e
 
 outdir=artifacts
 
-mkdir -p ${outdir}
+rm -rf ${outdir} && mkdir -p ${outdir}
 
 pkgs=(
 icons \
