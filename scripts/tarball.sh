@@ -4,10 +4,7 @@
 
 set -e
 
-datetime=$(date +"%Y%m%d%H%M%S")
-
-version=${1:-$datetime}
-outdir=artifacts/${version}
+outdir=artifacts
 
 mkdir -p ${outdir}
 
