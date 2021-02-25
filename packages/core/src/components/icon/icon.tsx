@@ -58,7 +58,7 @@ export interface IIconProps extends IIntentProps, IProps {
      *   should avoid using `<Icon icon={<Element />}` directly; simply render
      *   `<Element />` instead.
      */
-    icon: IconName | MaybeElement;
+    icon: IconName | IconNameHipa | MaybeElement;
 
     /**
      * Size of the icon, in pixels. Blueprint contains 16px and 20px SVG icon

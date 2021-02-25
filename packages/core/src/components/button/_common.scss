@@ -13,7 +13,7 @@ $button-padding: $hipa-grid-size * 0.5 $button-padding-x !default;
 $button-padding-small: $hipa-grid-size * 0.5 $button-padding-x !default;
 $button-padding-tight: $hipa-grid-size * 0.5 $button-padding-tight-x !default;
 $button-padding-large: $hipa-grid-size $button-padding-x !default;
-$button-icon-spacing: ($pt-button-height - $pt-icon-size-standard) / 2 !default;
+$button-icon-spacing: $hipa-grid-size / 2 !default;
 $button-icon-spacing-large: ($pt-button-height-large - $pt-icon-size-large) / 2 !default;
 
 /*

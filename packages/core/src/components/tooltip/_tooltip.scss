@@ -15,8 +15,7 @@
     $tooltip-background-color,
     $tooltip-text-color,
     $pt-tooltip-box-shadow,
-    $pt-drop-shadow-opacity,
-    $pt-border-shadow-opacity
+    none
   );
   // lightweight scale for tooltips
   @include react-transition(
@@ -36,8 +35,7 @@
       $dark-tooltip-background-color,
       $dark-tooltip-text-color,
       $pt-dark-tooltip-box-shadow,
-      $pt-dark-drop-shadow-opacity,
-      $pt-dark-border-shadow-opacity
+      none
     );
   }
 

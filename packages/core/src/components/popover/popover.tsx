@@ -431,6 +431,9 @@ export class Popover extends AbstractPureComponent2<IPopoverProps, IPopoverState
                 fn: arrowOffsetModifier,
                 order: 510,
             },
+            offset: {
+                offset: '0, 4'
+            },
             flip: { boundariesElement: boundary, ...flip },
             preventOverflow: { boundariesElement: boundary, ...preventOverflow },
             updatePopoverState: {
@@ -563,9 +566,11 @@ export class Popover extends AbstractPureComponent2<IPopoverProps, IPopoverState
     }
 
     private isArrowEnabled() {
-        const { minimal, modifiers } = this.props;
-        // omitting `arrow` from `modifiers` uses Popper default, which does show an arrow.
-        return !minimal && (modifiers?.arrow == null || modifiers.arrow.enabled);
+        // hipa doesn't use arrows
+        return false;
+        // const { minimal, modifiers } = this.props;
+        // // omitting `arrow` from `modifiers` uses Popper default, which does show an arrow.
+        // return !minimal && (modifiers?.arrow == null || modifiers.arrow.enabled);
     }
 
     private isElementInPopover(element: Element) {

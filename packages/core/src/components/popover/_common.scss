@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0.
 
 @import "../../common/variables";
+@import "../../common/variables-hipa";
 @import "../../common/react-transition";
 
 $popover-background-color: $white !default;
@@ -132,27 +133,14 @@ $dark-popover-background-color: $dark-gray4 !default;
   $background-color,
   $text-color,
   $shadows,
-  $arrow-drop-shadow-opacity,
-  $arrow-border-shadow-opacity
+  $border,
 ) {
+  border: $border;
   box-shadow: $shadows;
 
   .#{$ns}-popover-content {
     background: $background-color;
     color: $text-color;
-  }
-
-  .#{$ns}-popover-arrow::before {
-    box-shadow: 1px 1px 6px rgba($black, $arrow-drop-shadow-opacity);
-  }
-
-  .#{$ns}-popover-arrow-border {
-    fill: $black;
-    fill-opacity: $arrow-border-shadow-opacity;
-  }
-
-  .#{$ns}-popover-arrow-fill {
-    fill: $background-color;
   }
 }
 
