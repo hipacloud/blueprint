@@ -25,6 +25,7 @@ generated
 coverage
 /docs
 docs-static/**/*.d.ts
+artifacts
 
 # exclude site except for site/docs/versions
 site/*

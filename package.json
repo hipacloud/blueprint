@@ -9,7 +9,7 @@
     "scripts": {
         "bundle": "lerna run --parallel bundle",
         "compile": "lerna run compile",
-        "clean": "lerna run --parallel clean",
+        "clean": "lerna run --parallel clean && rm -rf artifacts",
         "copy:ci-config": "mkdir -p site/.circleci && cp .circleci/config-gh-pages.yml site/.circleci/config.yml",
         "copy:docs-app": "cp -rf packages/docs-app/dist/ site/docs",
         "copy:landing-app": "cp -rf packages/landing-app/dist/ site",
@@ -34,7 +34,9 @@
         "site": "npm-run-all site:clean -p copy:* -s serve",
         "site:clean": "git clean -xdfq site/",
         "test": "lerna run --parallel test",
-        "verify": "npm-run-all -s compile dist:libs dist:apps -p test lint format-check"
+        "tarball": "scripts/tarball.sh",
+        "ci": "npm-run-all -s clean compile dist:libs tarball",
+        "ci-strict": "npm-run-all -s clean compile dist:libs tarball -p test lint format-check"
     },
     "dependencies": {
         "@types/chai": "4.2.12",
