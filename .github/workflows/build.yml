@@ -26,17 +26,17 @@ jobs:
       id: upload_to_oss
       uses: blunt1973/upload-to-oss@v0.2.1
       with:
-        key-id: ${{ secrets.HIPA_NPM_OSS_ACCESS_KEY_ID }}
-        key-secret: ${{ secrets.HIPA_NPM_OSS_SECRET_ACCESS_KEY }}
-        endpoint: ${{ secrets.HIPA_NPM_OSS_ENDPOINT }}
-        bucket: ${{ secrets.HIPA_NPM_OSS_NAME }}
+        key-id: ${{ secrets.HIPA_PKG_OSS_ACCESS_KEY_ID }}
+        key-secret: ${{ secrets.HIPA_PKG_OSS_SECRET_ACCESS_KEY }}
+        endpoint: ${{ secrets.HIPA_PKG_OSS_ENDPOINT }}
+        bucket: ${{ secrets.HIPA_PKG_OSS_NAME }}
         asset-path: ./artifacts/
         target-path: /blueprint/${{ env.BLUEPRINT_TAG }}/
     - name: Wechatwork robot notify
       if: success()
       uses: blunt1973/wechatwork-action@master
       with:
-        url: ${{ secrets.HIPA_NPM_BUILD_WECOM_WEBHOOK}}
+        url: ${{ secrets.HIPA_BLUEPRINT_BUILD_WECOM_WEBHOOK }}
         type: markdown
         content: |
           buleprint build success, version:
