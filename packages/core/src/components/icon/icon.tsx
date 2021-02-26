@@ -18,12 +18,12 @@ import classNames from "classnames";
 import * as React from "react";
 import { polyfill } from "react-lifecycles-compat";
 
-import { IconName as BPIconName, IconNameHipa, IconSvgPaths16, IconSvgPaths20, IconSvgPathsHipa } from "@blueprintjs/icons";
+import { IconName as BPIconName, IconNameHipa, IconSvgPaths16, IconSvgPaths20, IconSvgPathsHipa as IconSvgStrings } from "@blueprintjs/icons";
 
 import { AbstractPureComponent2, Classes, DISPLAYNAME_PREFIX, IIntentProps, IProps, MaybeElement } from "../../common";
 
 type IconName =  BPIconName | IconNameHipa;
-export { IconName, IconSvgPathsHipa, IconNameHipa, BPIconName };
+export { IconName, IconSvgStrings, IconNameHipa, BPIconName };
 
 export interface IIconProps extends IIntentProps, IProps {
     /** This component does not support custom children. Use the `icon` prop. */
@@ -118,7 +118,7 @@ export class Icon extends AbstractPureComponent2<IIconProps & React.DOMAttribute
         const classes = classNames(Classes.ICON, Classes.iconClass(icon), Classes.intentClass(intent), className);
 
         // use inner html temporarily to render svg. can be replaced with img URI someday.
-        const svgString = IconSvgPathsHipa[icon as IconNameHipa];
+        const svgString = IconSvgStrings[icon as IconNameHipa];
         if (svgString) {
             return React.createElement(
                 tagName,
