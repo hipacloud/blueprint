@@ -23,7 +23,7 @@ import { IconName as BPIconName, IconNameHipa, IconSvgPaths16, IconSvgPaths20, I
 import { AbstractPureComponent2, Classes, DISPLAYNAME_PREFIX, IIntentProps, IProps, MaybeElement } from "../../common";
 
 type IconName =  BPIconName | IconNameHipa;
-export { IconName };
+export { IconName, IconSvgPathsHipa, IconNameHipa, BPIconName };
 
 export interface IIconProps extends IIntentProps, IProps {
     /** This component does not support custom children. Use the `icon` prop. */
