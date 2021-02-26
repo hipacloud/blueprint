@@ -1,11 +1,13 @@
 // Copyright 2016 Palantir Technologies, Inc. All rights reserved.
 // Licensed under the Apache License, Version 2.0.
+@import "../../common/colors-hipa";
+@import "../../common/variables-hipa";
 
-$tooltip-background-color: $dark-gray5 !default;
-$tooltip-text-color: $light-gray5 !default;
+$tooltip-background-color: rgba($hipa-black, $hipa-tooltip-opacity) !default;
+$tooltip-text-color: $hipa-white !default;
 
 $dark-tooltip-background-color: $light-gray3 !default;
 $dark-tooltip-text-color: $dark-gray5 !default;
 
-$tooltip-padding-vertical: $pt-grid-size !default;
-$tooltip-padding-horizontal: 1.2 * $pt-grid-size !default;
+$tooltip-padding-vertical: $hipa-grid-size !default;
+$tooltip-padding-horizontal: 2.5 * $hipa-grid-size !default;

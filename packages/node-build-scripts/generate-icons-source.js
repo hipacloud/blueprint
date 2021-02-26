@@ -118,8 +118,10 @@ writeLinesToFile(
                     `../icons/resources/icons/${icon.folder}/${icon.iconName}.svg`,
                 );
                 const svg = fs.readFileSync(filepath, "utf-8");
-                const { data } = await svgo.optimize(svg, { path: filepath });
-                return `    "${icon.iconName}-${icon.folder}": '${data}',`;
+                const svgString = await svgo
+                    .optimize(svg, { path: filepath })
+                    .then(({ data }) => data.replace(/(<path.+ fill=)"([^"]+)"/g, '$1"currentColor"'));
+                return `    "${icon.iconName}-${icon.folder}": '${svgString}',`;
             }),
         )),
         "};",

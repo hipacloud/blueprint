@@ -61,7 +61,7 @@ Styleguide menu
 
   &::before,
   > .#{$ns}-icon {
-    color: $pt-icon-color;
+    color: inherit;
   }
 
   .#{$ns}-menu-item-label {
