@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0.
 
 @import "../../common/variables";
+@import "../../common/variables-hipa";
 @import "~@blueprintjs/icons/src/icons";
 @import "./common";
 
@@ -23,10 +24,10 @@
   &.#{$ns}-popover {
     box-shadow: none;
     // horizontal padding leaves some space from parent menu item, and extends mouse zone
-    padding: 0 $half-grid-size;
+    padding: 0 0;
 
     > .#{$ns}-popover-content {
-      box-shadow: $pt-popover-box-shadow;
+      box-shadow: $hipa-popover-box-shadow;
     }
 
     .#{$ns}-dark &,

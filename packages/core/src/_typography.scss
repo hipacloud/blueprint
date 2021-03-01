@@ -205,35 +205,35 @@ Putting an icon inside a link will cause it to inherit the link's text color.
 
 Styleguide typography.links
 */
-
-a {
-  color: $pt-link-color;
-  text-decoration: none;
-
-  &:hover {
-    color: $pt-link-color;
-    cursor: pointer;
-    text-decoration: underline;
-  }
-
-  #{$icon-classes} {
-    color: inherit;
-  }
-
-  code,
-  .#{$ns}-dark & code {
-    color: inherit;
-  }
-
-  .#{$ns}-dark &,
-  .#{$ns}-dark &:hover {
-    color: $pt-dark-link-color;
-
-    #{$icon-classes} {
-      color: inherit;
-    }
-  }
-}
+//
+//a {
+//  color: $pt-link-color;
+//  text-decoration: none;
+//
+//  &:hover {
+//    color: $pt-link-color;
+//    cursor: pointer;
+//    text-decoration: underline;
+//  }
+//
+//  #{$icon-classes} {
+//    color: inherit;
+//  }
+//
+//  code,
+//  .#{$ns}-dark & code {
+//    color: inherit;
+//  }
+//
+//  .#{$ns}-dark &,
+//  .#{$ns}-dark &:hover {
+//    color: $pt-dark-link-color;
+//
+//    #{$icon-classes} {
+//      color: inherit;
+//    }
+//  }
+//}
 
 /*
 Preformatted text
