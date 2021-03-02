@@ -87,12 +87,12 @@ $dialog-padding: $hipa-grid-size * 2 !default;
   flex: 0 0 auto;
   min-height: $hipa-grid-size * 6;
   padding-left: $dialog-padding;
-  padding-right: $dialog-padding / 4;
+  padding-right: $dialog-padding;
   z-index: $pt-z-index-dialog-header;
 
   .#{$ns}-icon-large,
   .#{$ns}-icon {
-    color: $pt-icon-color;
+    color: $hipa-text-color;
     flex: 0 0 auto;
     margin-right: $dialog-padding / 2;
   }
