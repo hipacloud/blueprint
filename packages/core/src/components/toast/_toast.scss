@@ -125,20 +125,6 @@ $toast-margin: $hipa-grid-size * 3 !default;
       // blue outline color shows poorly on colored bg
       outline-color: $hipa-gray-dark-300;
     }
-
-    &:hover {
-      background-color: rgba($white, 0.15) !important;
-      color: $white !important;
-    }
-
-    &:active {
-      background-color: rgba($white, 0.3) !important;
-      color: $white !important;
-    }
-
-    &::after {
-      background: rgba($white, 0.3) !important;
-    }
   }
   /* stylelint-enable declaration-no-important */
 
