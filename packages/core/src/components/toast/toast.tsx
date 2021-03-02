@@ -79,7 +79,9 @@ export class Toast extends AbstractPureComponent2<IToastProps> {
                 <span className={Classes.TOAST_MESSAGE}>{message}</span>
                 <ButtonGroup minimal={true}>
                     {this.maybeRenderActionButton()}
-                    <Button icon="cross" onClick={this.handleCloseClick} />
+                    <Button onClick={this.handleCloseClick} >
+                        <Icon icon="close-16px" className="close"/>
+                    </Button>
                 </ButtonGroup>
             </div>
         );
@@ -108,7 +110,7 @@ export class Toast extends AbstractPureComponent2<IToastProps> {
         if (action == null) {
             return undefined;
         } else {
-            return <AnchorButton tight={false} {...action} intent={undefined} onClick={this.handleActionClick} />;
+            return <AnchorButton {...action} intent="primary" onClick={this.handleActionClick} />;
         }
     }
 

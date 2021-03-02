@@ -126,9 +126,9 @@ $dark-menu-item-color-active: $dark-minimal-button-background-color-active !defa
 }
 
 @mixin menu-divider() {
-  border-top: 1px solid $pt-divider-black;
+  border-top: 1px solid $hipa-border-color;
   display: block;
-  margin: $half-grid-size;
+  margin: $hipa-grid-size / 2 $hipa-grid-size * 2;
 
   .#{$ns}-dark & {
     border-top-color: $pt-dark-divider-white;
