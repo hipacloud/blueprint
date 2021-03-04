@@ -18,7 +18,7 @@ import classNames from "classnames";
 import * as React from "react";
 import { polyfill } from "react-lifecycles-compat";
 
-import { IconName } from "../icon/icon";
+import { IconName, Icon } from "../icon/icon";
 
 import {
     AbstractPureComponent2,
@@ -37,8 +37,6 @@ import {
     Utils,
 } from "../../common";
 import * as Errors from "../../common/errors";
-import { ButtonGroup } from "../button/buttonGroup";
-import { Button } from "../button/buttons";
 import { ControlGroup } from "./controlGroup";
 import { InputGroup } from "./inputGroup";
 import {
@@ -412,27 +410,27 @@ export class NumericInput extends AbstractPureComponent2<HTMLInputProps & INumer
     // ==============
 
     private renderButtons() {
-        const { intent, max, min, locale } = this.props;
+        const { max, min, locale } = this.props;
         const value = parseStringToStringNumber(this.state.value, locale);
         const disabled = this.props.disabled || this.props.readOnly;
         const isIncrementDisabled = max !== undefined && value !== "" && +value >= max;
         const isDecrementDisabled = min !== undefined && value !== "" && +value <= min;
 
         return (
-            <ButtonGroup className={Classes.FIXED} key="button-group" vertical={true}>
-                <Button
-                    disabled={disabled || isIncrementDisabled}
-                    icon="chevron-up"
-                    intent={intent}
+            <div className={classNames(Classes.FIXED, Classes.NUMERIC_BUTTON_GROUP)}>
+                {!(disabled && isIncrementDisabled) && <div
+                    className={Classes.NUMERIC_BUTTON}
                     {...this.incrementButtonHandlers}
-                />
-                <Button
-                    disabled={disabled || isDecrementDisabled}
-                    icon="chevron-down"
-                    intent={intent}
+                >
+                    <Icon icon="drop-down-16px" style={{ transform: "rotate(180deg)" }} />
+                </div>}
+                {!(disabled && isDecrementDisabled) && <div
+                    className={Classes.NUMERIC_BUTTON}
                     {...this.decrementButtonHandlers}
-                />
-            </ButtonGroup>
+                >
+                    <Icon icon="drop-down-16px" />
+                </div>}
+            </div>
         );
     }
 

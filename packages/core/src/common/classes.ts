@@ -201,6 +201,8 @@ export const NON_IDEAL_STATE = `${NS}-non-ideal-state`;
 export const NON_IDEAL_STATE_VISUAL = `${NON_IDEAL_STATE}-visual`;
 
 export const NUMERIC_INPUT = `${NS}-numeric-input`;
+export const NUMERIC_BUTTON_GROUP = `${NS}-numeric-button-group`;
+export const NUMERIC_BUTTON = `${NS}-numeric-button`;
 
 export const OVERFLOW_LIST = `${NS}-overflow-list`;
 export const OVERFLOW_LIST_SPACER = `${OVERFLOW_LIST}-spacer`;

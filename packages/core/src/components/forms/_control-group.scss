@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0.
 
 @import "../../common/variables";
+@import "../../common/variables-hipa";
 @import "../button/common";
 @import "./common";
 @import "../divider/divider";
@@ -75,6 +76,7 @@ Styleguide control-group
   @include pt-flex-container(row);
   // each child is full height
   align-items: stretch;
+  position: relative;
 
   // similarly to button groups, elements in control groups are stacked in a
   // very particular order for best visual results. in each level of selector
@@ -96,7 +98,7 @@ Styleguide control-group
     z-index: index($control-group-stack, "input-default");
 
     &:focus {
-      border-radius: $pt-border-radius;
+      border-radius: $hipa-border-radius;
       z-index: index($control-group-stack, "input-focus");
     }
 
@@ -227,24 +229,24 @@ Styleguide control-group
 
   // round the left corners of the left-most element
   > :first-child {
-    border-radius: $pt-border-radius 0 0 $pt-border-radius;
+    border-radius: $hipa-border-radius 0 0 $hipa-border-radius;
   }
 
   // round the right corners of the right-most element
   > :last-child {
-    border-radius: 0 $pt-border-radius $pt-border-radius 0;
+    border-radius: 0 $hipa-border-radius $hipa-border-radius 0;
     margin-right: 0;
   }
 
   // round all the corners of the only child element
   > :only-child {
-    border-radius: $pt-border-radius;
+    border-radius: $hipa-border-radius;
     margin-right: 0;
   }
 
   // bring back border radius on these buttons
   .#{$ns}-input-group .#{$ns}-button {
-    border-radius: $pt-border-radius;
+    border-radius: $hipa-border-radius;
   }
 
   // special handling of numeric input, which is a nested control group itself
@@ -311,12 +313,12 @@ Styleguide control-group
     }
 
     > :first-child {
-      border-radius: $pt-border-radius $pt-border-radius 0 0;
+      border-radius: $hipa-border-radius $hipa-border-radius 0 0;
       margin-top: 0;
     }
 
     > :last-child {
-      border-radius: 0 0 $pt-border-radius $pt-border-radius;
+      border-radius: 0 0 $hipa-border-radius $hipa-border-radius;
     }
   }
 }
