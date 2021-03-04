@@ -103,6 +103,7 @@ $button-outlined-border-disabled-intent-opacity: 0.2 !default;
 
   border: none;
   border-radius: $hipa-border-radius;
+  color: $hipa-button-text-none;
   cursor: pointer;
   font-size: $hipa-button-font-size;
   justify-content: center;
@@ -145,7 +146,6 @@ $button-outlined-border-disabled-intent-opacity: 0.2 !default;
     inset 0 -1px 0 0 $hipa-button-border-none,
     inset -1px 0 0 0 $hipa-button-border-none,
     inset 1px 0 0 0 $hipa-button-border-none;
-  color: $hipa-button-text-none;
 
   &[class*="-minimal"],
   &[class*="-minimal"]:hover,
@@ -225,7 +225,6 @@ $button-outlined-border-disabled-intent-opacity: 0.2 !default;
 @mixin pt-button-minimal() {
   background: none;
   box-shadow: none;
-  color: $hipa-button-minimal-text-none;
 
   &:hover {
     background: $hipa-button-minimal-bg-hover-none;
