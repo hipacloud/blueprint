@@ -112,7 +112,6 @@ $control-group-stack: (
   transition: $input-transition;
   vertical-align: middle;
 
-  &[type="search"],
   &.#{$ns}-round {
     border-radius: $hipa-input-height;
     // override normalize.css
