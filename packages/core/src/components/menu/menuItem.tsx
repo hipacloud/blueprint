@@ -167,7 +167,7 @@ export class MenuItem extends AbstractPureComponent2<IMenuItemProps & React.Anch
                 {text}
             </Text>,
             this.maybeRenderLabel(labelElement),
-            hasSubmenu ? <Icon icon="caret-right" /> : undefined,
+            hasSubmenu ? <Icon icon="more-right-16px" /> : undefined,
         );
 
         const liClasses = classNames({ [Classes.MENU_SUBMENU]: hasSubmenu });
