@@ -229,7 +229,7 @@ $input-button-height-small: $pt-button-height-smaller !default;
     }
   }
 
-  @each $intent, $color in $pt-intent-colors {
+  @each $intent, $color in $hipa-intent-colors {
     &.#{$ns}-intent-#{$intent} {
       .#{$ns}-input {
         @include pt-input-intent($color);
