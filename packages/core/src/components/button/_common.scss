@@ -372,10 +372,7 @@ $button-outlined-border-disabled-intent-opacity: 0.2 !default;
 
   @each $intent, $colors in $hipa-button-intents {
     &.#{$ns}-intent-#{$intent} {
-      @include pt-button-outlined-intent(
-        map-get($pt-intent-text-colors, $intent),
-        map-get($pt-dark-intent-text-colors, $intent)
-      );
+      @include pt-button-outlined-intent($colors...);
     }
   }
 }
@@ -391,20 +388,29 @@ $button-outlined-border-disabled-intent-opacity: 0.2 !default;
   }
 }
 
-@mixin pt-button-outlined-intent($text-color, $dark-text-color) {
-  border-color: rgba($text-color, $button-outlined-border-intent-opacity);
+@mixin pt-button-outlined-intent($border-color, $hover-color, $active-color, $disabled-color) {
+  border-color: $border-color;
+  color: $border-color;
 
+  &:hover {
+    border-color: $hover-color;
+  }
+
+  &:active {
+    border-color: $active-color;
+  }
   &:disabled,
   &.#{$ns}-disabled {
-    border-color: rgba($text-color, $button-outlined-border-disabled-intent-opacity);
+    border-color: $disabled-color;
+    color: $disabled-color;
   }
 
   .#{$ns}-dark & {
-    border-color: rgba($dark-text-color, $button-outlined-border-intent-opacity);
+    border-color: rgba($border-color, $button-outlined-border-intent-opacity);
 
     &:disabled,
     &.#{$ns}-disabled {
-      border-color: rgba($dark-text-color, $button-outlined-border-disabled-intent-opacity);
+      border-color: rgba($border-color, $button-outlined-border-disabled-intent-opacity);
     }
   }
 }

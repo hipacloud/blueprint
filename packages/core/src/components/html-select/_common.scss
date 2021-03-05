@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0.
 
 @import "../forms/common";
+@import "../../common/variables-hipa";
 
 %pt-select {
   @include pt-button-base();
@@ -10,8 +11,8 @@
   /* stylelint-disable property-no-vendor-prefix */
   -moz-appearance: none;
   -webkit-appearance: none;
-  border-radius: $pt-border-radius;
-  height: $pt-button-height;
+  border-radius: $hipa-border-radius;
+  height: $hipa-button-height;
   padding: 0 ($input-padding-horizontal * 2.5) 0 $input-padding-horizontal;
   // fill parent container
   width: 100%;

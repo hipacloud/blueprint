@@ -65,7 +65,7 @@ Styleguide button
 
   // intents
   @each $intent, $colors in $hipa-button-intents {
-    &.#{$ns}-intent-#{$intent}:not([class*="-minimal"]) {
+    &.#{$ns}-intent-#{$intent}:not([class*="-minimal"]):not([class*="-outlined"]) {
       @include pt-button-intent($colors...);
     }
   }
@@ -158,7 +158,6 @@ Styleguide button
 
   // outline is based on the styles of minimal
   &.#{$ns}-outlined {
-    @include pt-button-minimal();
     @include pt-button-outlined();
   }
 }
