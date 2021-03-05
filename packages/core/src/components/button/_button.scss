@@ -44,6 +44,7 @@ Styleguide button
 
   &.#{$ns}-fill {
     display: flex;
+    height: 100%;
     width: 100%;
   }
 
@@ -73,6 +74,13 @@ Styleguide button
     stroke: $white;
   }
 
+  &.#{$ns}-tight,
+  .#{$ns}-tight & {
+    min-height: $hipa-button-height-small;
+    padding-left: $button-padding-tight-x;
+    padding-right: $button-padding-tight-x;
+  }
+
   // size modifiers
   &.#{$ns}-large,
   .#{$ns}-large & {
@@ -82,11 +90,6 @@ Styleguide button
   &.#{$ns}-small,
   .#{$ns}-small & {
     @include pt-button-height-small();
-  }
-
-  &.#{$ns}-tight,
-  .#{$ns}-tight & {
-    @include pt-button-height-tight();
   }
 
   // loading state
