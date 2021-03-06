@@ -43,6 +43,10 @@ Styleguide input
     @include pt-dark-input();
   }
 
+  &[readonly] {
+    @include hipa-readonly-input();
+  }
+
   @each $intent, $color in $pt-intent-colors {
     &.#{$ns}-intent-#{$intent} {
       @include pt-input-intent($color);

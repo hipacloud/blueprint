@@ -95,6 +95,17 @@ $control-group-stack: (
   }
 }
 
+@mixin hipa-readonly-input() {
+  box-shadow: none;
+  background-color: $hipa-gray-500;
+
+  &,
+  &:hover,
+  &:focus {
+    border: 1px solid $hipa-border-color;
+  }
+}
+
 @mixin pt-input() {
   @include pt-input-placeholder();
   @include hipa-input-border();
