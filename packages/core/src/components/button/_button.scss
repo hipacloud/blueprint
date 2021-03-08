@@ -115,12 +115,10 @@ Styleguide button
   &[class*="#{$ns}-icon-"] {
     &::before {
       @include pt-icon();
-      color: $hipa-currentColor;
     }
   }
 
   #{$icon-classes} {
-    color: $hipa-currentColor;
 
     &.#{$ns}-align-right {
       margin-left: $button-icon-spacing;
