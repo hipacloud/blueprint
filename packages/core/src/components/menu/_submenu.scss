@@ -27,7 +27,7 @@
     padding: 0 0;
 
     > .#{$ns}-popover-content {
-      box-shadow: $hipa-popover-box-shadow;
+      box-shadow: $hipa-popover-submenu-box-shadow;
     }
 
     .#{$ns}-dark &,
