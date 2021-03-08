@@ -10,7 +10,9 @@ const path = require("path");
 const SVGO = require("svgo");
 const { COPYRIGHT_HEADER } = require("./constants");
 
-const svgo = new SVGO({ plugins: [{ convertShapeToPath: { convertArcs: true } }] });
+const svgo = new SVGO({
+    plugins: [{ convertShapeToPath: { convertArcs: true } }, { removeViewBox: false }, { removeDimensions: true }],
+});
 
 /**
  * @typedef {Object} IconMetadata
@@ -120,8 +122,9 @@ writeLinesToFile(
                 const svg = fs.readFileSync(filepath, "utf-8");
                 const svgString = await svgo
                     .optimize(svg, { path: filepath })
-                    .then(({ data }) => data.replace(/(<path[^>]* fill=)"([^"]+)"/g, '$1"currentColor"'))
-                    .then(data => data.replace(/(<path[^>]* stroke=)"([^"]+)"/g, '$1"currentColor"'));
+                    .then(({ data }) =>
+                        data.replace(/(<path[^>]* fill=)"([^"]+)"/g, '$1"currentColor"').replace("\n", ""),
+                    );
                 return `    "${icon.iconName}-${icon.folder}": '${svgString}',`;
             }),
         )),

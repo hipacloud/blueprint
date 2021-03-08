@@ -107,7 +107,7 @@ export class Icon extends AbstractPureComponent2<IIconProps & React.DOMAttribute
             className,
             color,
             htmlTitle,
-            iconSize = Icon.SIZE_STANDARD,
+            iconSize,
             intent,
             title = icon,
             tagName = "span",
@@ -117,21 +117,26 @@ export class Icon extends AbstractPureComponent2<IIconProps & React.DOMAttribute
         // eslint-disable-next-line deprecation/deprecation
         const classes = classNames(Classes.ICON, Classes.iconClass(icon), Classes.intentClass(intent), className);
 
-        // use inner html temporarily to render svg. can be replaced with img URI someday.
+        // find hipa own svgString first
         const svgString = IconSvgStrings[icon as IconNameHipa];
         if (svgString) {
+            const sizeMatch = /-(\d+)px$/.exec(icon);
+            const hipaIconSize = `${iconSize || (sizeMatch ? sizeMatch[1] : Icon.SIZE_STANDARD)}px`;
             return React.createElement(
                 tagName,
                 {
                     ...htmlprops,
                     className: classes,
                     title: htmlTitle,
+                    style: { width: hipaIconSize, height: hipaIconSize },
                     dangerouslySetInnerHTML: { __html: svgString },
-                },
+                }
             );
         }
+
         // choose which pixel grid is most appropriate for given icon size
-        const pixelGridSize = iconSize >= Icon.SIZE_LARGE ? Icon.SIZE_LARGE : Icon.SIZE_STANDARD;
+        const bpIconSize = iconSize || Icon.SIZE_STANDARD;
+        const pixelGridSize = bpIconSize >= Icon.SIZE_LARGE ? Icon.SIZE_LARGE : Icon.SIZE_STANDARD;
         // render path elements, or nothing if icon name is unknown.
         const paths = this.renderSvgPaths(pixelGridSize, icon);
 
@@ -144,7 +149,7 @@ export class Icon extends AbstractPureComponent2<IIconProps & React.DOMAttribute
                 className: classes,
                 title: htmlTitle,
             },
-            <svg fill={color} data-icon={icon} width={iconSize} height={iconSize} viewBox={viewBox}>
+            <svg fill={color} data-icon={icon} width={bpIconSize} height={bpIconSize} viewBox={viewBox}>
                 {title && <desc>{title}</desc>}
                 {paths}
             </svg>,
