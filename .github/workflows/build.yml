@@ -39,6 +39,6 @@ jobs:
         url: ${{ secrets.HIPA_BLUEPRINT_BUILD_WECOM_WEBHOOK }}
         type: markdown
         content: |
-          buleprint build success, version:
+          blueprint build success, version:
           ${{ env.BLUEPRINT_TAG }}
 
