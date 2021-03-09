@@ -197,7 +197,7 @@ Styleguide control-group
   }
 
   // have consecutive elements share a border
-  &:not(.#{$ns}-vertical) {
+  &:not(.#{$ns}-numeric-input):not(.#{$ns}-vertical) {
     > *:not(.#{$ns}-divider) {
       margin-right: -$button-border-width;
     }
