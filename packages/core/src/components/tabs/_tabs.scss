@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0.
 
 @import "../../common/variables";
+@import "../../common/variables-hipa";
 @import "../../common/mixins";
 
 /*
@@ -24,7 +25,7 @@ Markup:
 Styleguide tabs
 */
 
-$tab-color-selected: $pt-link-color !default;
+$tab-color-selected: $hipa-primary-color !default;
 $dark-tab-color-selected: $pt-dark-link-color !default;
 
 $tab-indicator-width: 3px !default;

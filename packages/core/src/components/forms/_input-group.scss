@@ -93,8 +93,6 @@ $input-button-height-small: $pt-button-height-smaller !default;
   // direct descendant to exclude icons in buttons
   > .#{$ns}-input-left-container > .#{$ns}-icon,
   > .#{$ns}-icon {
-    color: $pt-icon-color;
-
     &:empty {
       @include pt-icon($pt-icon-size-standard);
     }
