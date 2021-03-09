@@ -138,6 +138,7 @@ const INVALID_PROPS = [
     "elementRef",
     "fill",
     "icon",
+    "iconSize",
     "inputRef",
     "intent",
     "inline",
