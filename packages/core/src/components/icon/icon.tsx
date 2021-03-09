@@ -128,9 +128,9 @@ export class Icon extends AbstractPureComponent2<IIconProps & React.DOMAttribute
                     ...htmlprops,
                     className: classes,
                     title: htmlTitle,
-                    style: { width: hipaIconSize, height: hipaIconSize },
+                    style: { width: hipaIconSize, height: hipaIconSize, ...htmlprops.style },
                     dangerouslySetInnerHTML: { __html: svgString },
-                }
+                },
             );
         }
 
