@@ -147,7 +147,6 @@ $control-indicator-spacing: $pt-grid-size !default;
 
   input:disabled ~ .#{$ns}-control-indicator {
     background: $hipa-input-bg-disabled;
-    box-shadow: $button-box-shadow-disabled;
     cursor: not-allowed;
   }
 

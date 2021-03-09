@@ -150,7 +150,7 @@ $control-group-stack: (
 
 @mixin pt-input-disabled() {
   background: $hipa-input-bg-disabled;
-  border: 1px solid $hipa-input-text-disabled;
+  border: 1px solid $hipa-input-border-disabled;
   color: $hipa-input-text-disabled;
   cursor: not-allowed;
   resize: none;
