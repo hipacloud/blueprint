@@ -110,7 +110,7 @@ export class Toast extends AbstractPureComponent2<IToastProps> {
         if (action == null) {
             return undefined;
         } else {
-            return <AnchorButton {...action} intent="primary" onClick={this.handleActionClick} />;
+            return <AnchorButton {...action} intent="primary" minimal onClick={this.handleActionClick} />;
         }
     }
 
