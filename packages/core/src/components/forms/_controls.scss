@@ -94,7 +94,7 @@ $control-indicator-spacing: $pt-grid-size !default;
   text-transform: none;
 
   &.#{$ns}-disabled {
-    color: $hipa-input-text-disabled;
+    color: $hipa-gray-dark-500;
     cursor: not-allowed;
   }
 
@@ -286,10 +286,10 @@ $control-indicator-spacing: $pt-grid-size !default;
 
   $switch-indicator-text-font-size: 0.7em;
 
-  $switch-background-color: $hipa-primary-light-color !default;
-  $switch-background-color-hover: $hipa-blue-dark-500 !default;
-  $switch-background-color-active: $hipa-blue-dark-400 !default;
-  $switch-background-color-disabled: $hipa-primary-disabled !default;
+  $switch-background-color: $hipa-gray-200 !default;
+  $switch-background-color-hover: $hipa-gray-100 !default;
+  $switch-background-color-active: $hipa-gray-dark-500 !default;
+  $switch-background-color-disabled: $hipa-gray-300 !default;
   $switch-checked-background-color: nth(map-get($hipa-button-intents, "primary"), 1) !default;
   $switch-checked-background-color-hover: nth(map-get($hipa-button-intents, "primary"), 2) !default;
   $switch-checked-background-color-active: nth(map-get($hipa-button-intents, "primary"), 3) !default;
