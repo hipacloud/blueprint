@@ -6,9 +6,9 @@
 @import "../../common/react-transition";
 @import "../../common/mixins-hipa";
 
-$toast-height: $pt-button-height-large !default;
-$toast-min-width: $pt-grid-size * 30 !default;
-$toast-max-width: $pt-grid-size * 50 !default;
+$toast-height: $hipa-grid-size * 6 !default;
+$toast-min-width: $hipa-grid-size * 40 !default;
+$toast-max-width: $hipa-grid-size * 58.5 !default;
 $toast-margin: $hipa-grid-size * 3 !default;
 
 .#{$ns}-toast {
@@ -52,9 +52,10 @@ $toast-margin: $hipa-grid-size * 3 !default;
     $after: "~ &"
   );
   align-items: flex-start;
-  background-color: $white;
-  border-radius: $hipa-border-radius * 2;
-  box-shadow: $button-box-shadow;
+  background-color: $hipa-white;
+  border-radius: $hipa-border-radius;
+  box-shadow: $hipa-toast-box-shadow;
+  color: $hipa-text-color;
   display: flex;
   margin: $toast-margin 0 0;
   max-width: $toast-max-width;
@@ -68,23 +69,13 @@ $toast-margin: $hipa-grid-size * 3 !default;
   /* stylelint-disable-next-line declaration-no-important */
   position: relative !important;
 
-  &::before {
-    bottom: 0;
-    content: "";
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 6px;
-  }
-
   .#{$ns}-button-group {
     flex: 0 0 auto;
-    padding: 10px;
+    padding: 10px 8px;
   }
 
   > .#{$ns}-icon {
-    color: $pt-icon-color;
-    margin: 16px 0 16px 18px;
+    margin: 16px 8px 16px 14px;
   }
 
   &.#{$ns}-dark,
@@ -98,16 +89,12 @@ $toast-margin: $hipa-grid-size * 3 !default;
   }
 
   &[class*="#{$ns}-intent-"] {
-    a {
-      color: rgba($white, 0.7);
-
-      &:hover {
-        color: $white;
-      }
+    > .#{$ns}-icon {
+      color: $hipa-white;
     }
 
-    > .#{$ns}-icon {
-      color: $white;
+    .#{$ns}-button {
+      color: $hipa-white;
     }
   }
 
@@ -131,13 +118,8 @@ $toast-margin: $hipa-grid-size * 3 !default;
   // define these last so they override default dark colors above
   @each $intent, $color in $hipa-intent-colors {
     &.#{$ns}-intent-#{$intent} {
-      &::before {
-        background-color: $color;
-      }
-
-      .#{$ns}-icon:not(.close) {
-        color: $color;
-      }
+      background-color: $color;
+      color: $hipa-white;
     }
   }
 }
@@ -145,7 +127,7 @@ $toast-margin: $hipa-grid-size * 3 !default;
 .#{$ns}-toast-message {
   flex: 1 1 auto;
   line-height: 20px;
-  padding: 14px 4px;
+  padding: 14px 0;
   word-break: break-word;
 }
 
