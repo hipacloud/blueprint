@@ -152,13 +152,13 @@ $input-button-height-small: $pt-button-height-smaller !default;
   &.#{$ns}-large {
     .#{$ns}-button {
       @include pt-button-height($input-button-height-large);
-      margin: ($pt-input-height-large - $input-button-height-large) / 2;
+      margin: ($hipa-input-height-large - $input-button-height-large) / 2;
     }
 
     > .#{$ns}-input-left-container > .#{$ns}-icon,
     > .#{$ns}-icon,
     .#{$ns}-input-action > .#{$ns}-spinner {
-      margin: ($pt-input-height-large - $pt-icon-size-standard) / 2;
+      margin: ($hipa-input-height-large - $pt-icon-size-large) / 2;
     }
 
     .#{$ns}-input {

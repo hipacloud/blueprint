@@ -86,7 +86,7 @@ export class Omnibar<T> extends React.PureComponent<IOmnibarProps<T>> {
                     <InputGroup
                         autoFocus={true}
                         large={true}
-                        leftIcon="search"
+                        leftIcon="search-20px"
                         placeholder="Search..."
                         {...inputProps}
                         onChange={listProps.handleQueryChange}

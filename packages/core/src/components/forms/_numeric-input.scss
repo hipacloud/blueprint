@@ -6,16 +6,16 @@
 .#{$ns}-numeric-input {
   .#{$ns}-numeric-button-group {
     align-items: center;
+    border-left: 1px solid $hipa-gray-200;
     color: $hipa-gray-100;
     // hide arrow buttons until hover
     display: none;
     flex-direction: column;
-    height: 100%;
+    height: calc(100% - 2px);
     justify-content: center;
-    padding: 1px 0;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 1px;
+    top: 1px;
     user-select: none;
     z-index: index($control-group-stack, "select-caret");
 
@@ -23,11 +23,16 @@
       align-items: center;
       cursor: pointer;
       display: flex;
-      flex-grow: 1;
+      height: 50%;
       justify-content: center;
 
       &:hover {
+        background-color: $hipa-gray-500;
         color: $hipa-gray-dark-500;
+      }
+
+      &:last-child {
+        border-top: 1px solid $hipa-gray-200;
       }
     }
   }

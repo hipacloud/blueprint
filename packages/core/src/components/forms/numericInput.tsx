@@ -419,16 +419,17 @@ export class NumericInput extends AbstractPureComponent2<HTMLInputProps & INumer
         return (
             <div className={classNames(Classes.FIXED, Classes.NUMERIC_BUTTON_GROUP)}>
                 {!(disabled && isIncrementDisabled) && <div
+                    style={{ transform: "rotate(180deg)" }}
                     className={Classes.NUMERIC_BUTTON}
                     {...this.incrementButtonHandlers}
                 >
-                    <Icon icon="drop-down-16px" style={{ transform: "rotate(180deg)" }} />
+                    <Icon icon="drop-down-16px" iconSize={20} />
                 </div>}
                 {!(disabled && isDecrementDisabled) && <div
                     className={Classes.NUMERIC_BUTTON}
                     {...this.decrementButtonHandlers}
                 >
-                    <Icon icon="drop-down-16px" />
+                    <Icon icon="drop-down-16px" iconSize={20} />
                 </div>}
             </div>
         );
