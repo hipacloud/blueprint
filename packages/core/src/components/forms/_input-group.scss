@@ -165,11 +165,11 @@ $input-button-height-small: $pt-button-height-smaller !default;
       @include pt-input-large();
 
       &:not(:first-child) {
-        padding-left: $pt-button-height-large;
+        padding-left: $hipa-input-height-large;
       }
 
       &:not(:last-child) {
-        padding-right: $pt-button-height-large;
+        padding-right: $hipa-input-height-large;
       }
     }
   }
