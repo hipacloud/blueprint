@@ -3,6 +3,7 @@
 
 @import "../tooltip/common";
 @import "./common";
+@import "../../common/colors-hipa";
 
 $handle-size: $pt-icon-size-standard !default;
 $track-size: $handle-size - $pt-grid-size !default;
@@ -49,13 +50,13 @@ $track-height: $track-size !default;
 }
 
 .#{$ns}-slider-progress {
-  background: rgba($gray1, 0.2);
+  background: $hipa-gray-300;
 
   .#{$ns}-dark & {
     background: rgba($black, 0.5);
   }
 
-  @each $intent, $color in $pt-intent-colors {
+  @each $intent, $color in $hipa-intent-colors {
     &.#{$ns}-intent-#{$intent} {
       background-color: $color;
     }
