@@ -264,7 +264,7 @@ export class InputGroup extends AbstractPureComponent2<IInputGroupProps2, IInput
                 </span>
             );
         } else if (leftIcon != null) {
-            return <Icon icon={leftIcon} />;
+            return <Icon icon={leftIcon} iconSize={20} />;
         }
 
         return undefined;

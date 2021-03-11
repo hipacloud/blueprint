@@ -103,7 +103,7 @@ $input-button-height-small: $pt-button-height-smaller !default;
   > .#{$ns}-input-left-container > .#{$ns}-icon,
   > .#{$ns}-icon,
   .#{$ns}-input-action > .#{$ns}-spinner {
-    margin: ($hipa-input-height - $pt-icon-size-standard) / 2;
+    margin: ($hipa-input-height - $pt-icon-size-large) / 2;
   }
 
   .#{$ns}-tag {
