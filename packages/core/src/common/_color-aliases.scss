@@ -1,19 +1,21 @@
 // Copyright 2015 Palantir Technologies, Inc. All rights reserved.
 // Licensed under the Apache License, Version 2.0.
 
-$pt-intent-primary: $blue3 !default;
-$pt-intent-success: $green3 !default;
-$pt-intent-warning: $orange3 !default;
-$pt-intent-danger: $red3 !default;
+@import "variables-hipa";
+
+$pt-intent-primary: $hipa-intent-primary !default;
+$pt-intent-success: $hipa-intent-success !default;
+$pt-intent-warning: $hipa-intent-warning !default;
+$pt-intent-danger: $hipa-intent-danger !default;
 
 $pt-app-background-color: $light-gray5 !default;
 $pt-dark-app-background-color: $dark-gray3 !default;
 
 $pt-outline-color: rgba($blue3, 0.6);
 
-$pt-text-color: $dark-gray1 !default;
-$pt-text-color-muted: $gray1 !default;
-$pt-text-color-disabled: rgba($pt-text-color-muted, 0.6) !default;
+$pt-text-color: $hipa-text-color !default;
+$pt-text-color-muted: $hipa-label-text-color !default;
+$pt-text-color-disabled: $hipa-input-text-disabled !default;
 $pt-heading-color: $pt-text-color !default;
 $pt-link-color: $blue2 !default;
 $pt-dark-text-color: $light-gray5 !default;

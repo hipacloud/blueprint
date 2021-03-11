@@ -50,11 +50,11 @@ $input-button-height-small: $pt-button-height-smaller !default;
 
     // add space if there's something before or after the input
     &:not(:first-child) {
-      padding-left: $pt-input-height;
+      padding-left: $hipa-input-height;
     }
 
     &:not(:last-child) {
-      padding-right: $pt-input-height;
+      padding-right: $hipa-input-height;
     }
   }
 
@@ -77,7 +77,7 @@ $input-button-height-small: $pt-button-height-smaller !default;
 
   .#{$ns}-button {
     @include pt-button-height($input-button-height);
-    margin: ($pt-input-height - $input-button-height) / 2;
+    margin: ($hipa-input-height - $input-button-height) / 2;
     padding: $button-padding-small;
 
     // icons CSS API support
@@ -177,18 +177,18 @@ $input-button-height-small: $pt-button-height-smaller !default;
   &.#{$ns}-small {
     .#{$ns}-button {
       @include pt-button-height($pt-button-height-smaller);
-      margin: ($pt-input-height-small - $pt-button-height-smaller) / 2;
+      margin: ($hipa-input-height-small - $pt-button-height-smaller) / 2;
     }
 
     .#{$ns}-tag {
       @include pt-button-height($pt-button-height-smaller);
-      margin: ($pt-input-height-small - $pt-button-height-smaller) / 2;
+      margin: ($hipa-input-height-small - $pt-button-height-smaller) / 2;
     }
 
     > .#{$ns}-input-left-container > .#{$ns}-icon,
     > .#{$ns}-icon,
     .#{$ns}-input-action > .#{$ns}-spinner {
-      margin: ($pt-input-height-small - $pt-icon-size-standard) / 2;
+      margin: ($hipa-input-height-small - $pt-icon-size-standard) / 2;
     }
 
     .#{$ns}-input {
@@ -213,7 +213,7 @@ $input-button-height-small: $pt-button-height-smaller !default;
     .#{$ns}-button,
     .#{$ns}-input,
     .#{$ns}-tag {
-      border-radius: $pt-input-height;
+      border-radius: $hipa-input-height;
     }
   }
 
