@@ -32,8 +32,8 @@
 }
 
 %pt-select-disabled {
-  background-color: $button-background-color-disabled;
-  box-shadow: none;
+  background-color: $hipa-input-bg-disabled;
+  box-shadow: $hipa-disabled-border-shadow;
   color: $button-color-disabled;
   cursor: not-allowed;
 }
