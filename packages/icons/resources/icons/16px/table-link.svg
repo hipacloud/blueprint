@@ -1,3 +1,9 @@
-<svg width="16" height="16" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path fill="currentColor" d="M464 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM232 432H54a6 6 0 0 1-6-6V296h184v136zm0-184H48V112h184v136zm226 184H280V296h184v130a6 6 0 0 1-6 6zm6-184H280V112h184v136z"></path>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.5 10.5H6V9.3H4.5V10.5Z" fill="#666666"/>
+<path d="M6 8.5H4.5V7.3H6V8.5Z" fill="#666666"/>
+<path d="M6 6.5H4.5V5.3H6V6.5Z" fill="#666666"/>
+<path d="M11.5 6.5H7V5.3H11.5V6.5Z" fill="#666666"/>
+<path d="M7 8.5H11.5V7.3H7V8.5Z" fill="#666666"/>
+<path d="M11.5 10.5H7V9.3H11.5V10.5Z" fill="#666666"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2 4C2 3.44772 2.44772 3 3 3H13C13.5523 3 14 3.44772 14 4V12C14 12.5523 13.5523 13 13 13H3C2.44772 13 2 12.5523 2 12V4ZM3.2 11.8V4.2H12.8V11.8H3.2Z" fill="#666666"/>
 </svg>
